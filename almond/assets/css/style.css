@@ -9,16 +9,17 @@
     height: 100vh;
     position: relative;
     background: url(../img/blue_dia.jpg);
+    background-position: top;
+    background-size: contain;
 }
 .container{
     width: 100%;
-    max-width: 1640px;
+    max-width: 83.42%;
     height: 100%;
     margin: 0 auto;
     padding-top: 50px;
     box-sizing: border-box;
 }
-
 .gnb{
         float: right;
     }
@@ -26,15 +27,22 @@
     padding-top: 25px;
 }
 .gnb ul li{
-    display: inline-block; padding-left: 30px;
+    display: inline-block; 
+    padding-left: 30px;
+}
+.gnb ul li:hover a{
+    display: inline-block;
+    border-bottom: 2px solid #0E1B2D;
 }
 .gnb ul li a{
-    color: #ffff; display: block; font-size: 22px;
+    display: block; 
+    color: #ffff;
+    font-size: 22px;
+    font-weight: bold;
 }
-
 .logo {
     display: inline-block;
-    width: 180px;
+    width: 188px;
     height: 115px;
     background: url(../img/logo.png) no-repeat;
     background-size: contain;
@@ -43,98 +51,204 @@
     left: 13%;
 }
 .leaf{
-    width: 536px;
+    width: 25%;
     height: 448px;
-    background: url(../img/leaf_alomond.png) no-repeat;
+    background: url(../img/leaf_alomond1.png) no-repeat;
     background-size: contain;
-    transform: rotate(219deg);
+    position: absolute;
+    left: -200px;
+    top: 32px;
+    transform: rotate(10deg);
+    opacity: 0;
+}
+.fruit_st{
+    display: block;
+    width: 23%;
+    height: 214px;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 18px;
+    background: url(../img/almond_piece.png) no-repeat;
+    background-size: contain;
 }
-
-.halmond{
-    width: 400px;
+.fruit{
+    display: block;
+    width: 23%;
+    height: 214px;
+    position: absolute;
+    left: 0;
+    top: 18px;
+    background: url(../img/almond_piece.png) no-repeat;
+    background-size: contain;
+    animation: fruit 3s linear 2s infinite;
+    animation-fill-mode: forwards;
+    
+}
+@keyframes fruit{
+    0%{
+        top: 18px;
+    }
+    10%{
+        transform: rotate(20deg);
+    }
+    30%{
+        transform: rotate(-20deg);
+    }
+    60%{
+        transform: rotate(20deg);
+    }
+    80%{
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+/* .halmond{
+    width: 21%;
     height: 428px;
     background: url(../img/almond.png) no-repeat;
-    background-size: cover;
+    background-size: contain;
     position: absolute;
     left: 0px;
-    bottom: 80px;
+    bottom: 5px;
     transform: rotate(90deg);
-}
-.halmond::after{
-    content: '';
-    display: block;
-    width: 400px;
-    height: 428px;
-    background: url(../img/almond.png) no-repeat;
-    background-size: cover;
+    opacity: 0;
+} */
+.dalmond{
+    width: 16%;
+    height: 362px;
+    background: url(../img/drop_almond.png) no-repeat;
+    background-size: contain;
     position: absolute;
-    left: -100px;
-    bottom: 150%;
-    transform: rotate(90deg);
+    left: 22%;
+    top: 207px;
+    opacity: 0;
 }
-
 .flower1{
-    width: 459px;
+    width: 21%;
     height: 322px;
     background: url(../img/blossom_f.png)no-repeat;
     background-size: contain;
     position: absolute;
-    right: -2%;
+    right: -10%;
     top: 168px;
     transform: rotate(-33deg);
     z-index: 10;
+    opacity: 0;
 }
-
+.petal_fir{
+    width: 56px;
+    height: 73px;
+    background: url(../img/petal.png)no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 18px;
+    top: 25px;
+    transform: rotate(-48deg);
+    animation: petal1 2s ease-out 2.5s;
+    animation-fill-mode: forwards;
+}
+.petal_sec{
+    width: 56px;
+    height: 73px;
+    background: url(../img/petal.png)no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 28%;
+    top: -16px;
+    animation: peta2 4s ease-out 3.5s;
+    animation-fill-mode: forwards;
+ }
+ .petal_thir{
+    width: 40px;
+    height: 50px;
+    background: url(../img/petal2.png)no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 20%;
+    top: 40%;
+    animation: peta3 4s ease-out 5s;
+    animation-fill-mode: forwards;
+ }
+@keyframes petal1{
+    0%{
+        left: 18px;
+        transform: rotate(-48deg);
+    }
+    100%{
+        left: -49%;
+        top: -18px;
+        transform: rotate3d(15, 14, -4, 55deg);
+    }
+}
+@keyframes peta2{
+    0%{
+        left: 28%;
+        transform: rotate(-45deg);
+        
+    }
+    100%{
+        left: -195%;
+        top: 47%;
+        transform: rotate3d(7, 7, -5, 66deg);
+    }
+}
+@keyframes peta3{
+    0%{
+        left: 20%;
+    }
+    100%{
+        left: -82%;
+        top: 141%;
+        transform: rotate3d(7, 7, -5, 66deg);
+    }
+}
 .flower2{
-    width: 530px;
+    width: 25%;
     height: 380px;
     background: url(../img/blossom_2.png)no-repeat;
     background-size: contain;
     position: absolute;
-    right: -55px;
+    right: -24%;
     bottom: 40px;
     transform: rotate(176deg);
     z-index: 10;
+    opacity: 0;
 }
-
 .font_wrap{
     position: absolute;
-    bottom: 150px;
+    bottom: 153px;
     left: 15%;
     z-index: 10;
+    opacity: 0;
 }
-
 .font_wrap::after{
     content: '';
     display: block;
-    width: 186px;
+    width: 33%;
     height: 310px;
-    background: url(../img/font-deco.png)no-repeat;
+    background: url(../img/font-deco.png) no-repeat;
     background-size: contain;
     position: absolute;
     left: -15%;
-    top: 0;
+    top: -35px;
     z-index: -1;
 }
-
 .font_wrap .hbtn{
-    color: #FFFF;
-    font-size: 15px;
-    border: none;
-    width: 150px;
-    height: 50px;
-    margin-top: 30px;
-    background: none;
+    padding: 16px 43px;
+    margin-top: 36px;
+    color: #0E1B2D;
+    font-size: 16px;
+    font-weight: bold;
+    background: rgba(172, 221, 236,.5);
+    border: 2px solid #fff;
 }
-
 #header h2{
-    font-size: 55px;
+    font-size: 46px;
     font-weight: bold;
     color: #fff;
-    margin-bottom: 33px;
+    margin-bottom: 20px;
     z-index: 5;
 }
 #header p{
@@ -146,11 +260,106 @@
     z-index: 5;
 }
 .prod_breez{
-    width: 636px;
-    height: 644px;
+    width: 30%;
+    height: 613px;
     background: url(../img/breez_poroduct.png) no-repeat;
-    background-size: cover;
+    background-size: contain;
     position: absolute;
     right: 18%;
-    bottom: 58px
+    bottom: 30px;
+    opacity: 0;
 }
+.drop_water{
+    display: block;
+    position: absolute;
+    left: -14%;
+    bottom: -19%;
+    width: 40%;
+    height: 500px;
+    opacity: 0;
+}
+.drop_water > div{
+    margin: 200px auto;
+}
+.drop_water .drop{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: -50%;
+    margin: 0 auto;
+    background: #F2E5CD;
+    border-radius: 20px;
+    animation: drip;
+    animation-timing-function: cubic-bezier(1,0,.91,.9);
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.drop_water .drop::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 30px solid #F2E5CD;
+    top: -20px;
+}
+.drop_water .wave{
+    position: relative;
+    opacity: 0;
+    top: 0;
+    width: 2px;
+    height: 1px;
+    border: 7px solid #F2E5CD;
+    border-radius: 50%;
+    animation-name: ripple;
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.drop_water .wave::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 2px;
+    height: 1px;
+    border: 7px solid #F2E5CD;
+    border-radius: 50%;
+    opacity: 0;
+    animation-name: ripple_2;
+    animation-duration: 2s;
+    animation-delay: 1.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes ripple{
+    from{
+        opacity: 1;
+    }
+    to{
+        width: 400px;
+        height: 100px;
+        top:-100px;
+        opacity: 0;
+    }
+} 
+ @keyframes drip{
+     to{
+         top: 190px;
+     }
+ }
+ @keyframes ripple_2{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        width: 280px;
+        height: 80px;
+        border-width: 3px;
+        opacity: 1;
+    }
+} 
