@@ -16,6 +16,9 @@ tl.to($('.drop_water'), .3, {
 tl.to($('.font_wrap'), .3, {
         opacity:1,
 });
+tl.to($('.dr_almond'), .3, {
+        opacity:1,
+});
 tl.to($('.dalmond'), .3, {
         opacity:1,
 });
@@ -33,6 +36,7 @@ tl.to($('.dalmond'), .3, {
 // });
 var e0 = document.getElementsByClassName("flower1");
 var e1 = document.getElementsByClassName("flower2");
+
 var t2 = new TimelineLite()
 
 t2.staggerTo( [e0, e1], 1, {ease:Linear.ease, opacity: 1, right:-2+'%'});

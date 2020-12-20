@@ -30,16 +30,34 @@
     display: inline-block; 
     padding-left: 30px;
 }
-.gnb ul li:hover a{
-    display: inline-block;
-    border-bottom: 2px solid #0E1B2D;
-}
 .gnb ul li a{
     display: block; 
+    position: relative;
     color: #ffff;
     font-size: 22px;
     font-weight: bold;
+    text-align: center;
+    transition: color 0.5s;
 }
+.gnb ul li:hover a{
+    color: #0E1B2D;
+}
+/* .gnb ul li a::after{
+    content: '';
+    width: 0%;
+    height: 4px;
+    background:-webkit-radial-gradient(circle, #fff, #4286f4, #373B44);
+    background:radial-gradient(circle, #fff, #4286f4, #373B44);
+    position: absolute;
+    bottom: -15%;
+    left: 50%;
+    border-radius: 10px;
+    transition: all 500ms ease;
+} */
+/* .gnb ul li:hover a::after{
+    left: 0%;
+    width: 100%;
+} */
 .logo {
     display: inline-block;
     width: 188px;
@@ -104,25 +122,62 @@
         transform: rotate(0deg);
     }
 }
-/* .halmond{
-    width: 21%;
-    height: 428px;
-    background: url(../img/almond.png) no-repeat;
+.dr_almond{
+    opacity: 0;
+}
+.halmond {
+    width: 45px;
+    height: 67px;
+    background: url(../img/almond_1.png) no-repeat;
     background-size: contain;
     position: absolute;
-    left: 0px;
-    bottom: 5px;
-    transform: rotate(90deg);
-    opacity: 0;
-} */
-.dalmond{
-    width: 16%;
-    height: 362px;
+    left: 24%;
+    top: 292px;
+    transform: rotate3d(1, 1, -2, 71deg);
+}
+.palmond{
+    width: 14%;
+    height: 306px;
     background: url(../img/drop_almond.png) no-repeat;
     background-size: contain;
     position: absolute;
+    left: 26%;
+    top: 361px;
+    transform: rotate(19deg);
+}
+/* .palmond::after{
+    content: '';
+    display: inline-block;
+    width: 45px;
+    height: 67px;
+    background: url(../img/almond_1.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 59%;
+    top: 123%;
+}
+.palmond::before{
+    content: '';
+    display: inline-block;
+    width: 45px;
+    height: 67px;
+    background: url(../img/almond_1.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 20%;
+    top: 159%;
+    transform: rotate3d(6, 0, 9, 45deg);
+} */
+.dalmond{
+    width: 24%;
+    height: 366px;
+    background: url(../img/almond.png)no-repeat;
+    background-size: cover;
+    bottom: -16%;
     left: 22%;
-    top: 207px;
+    display: inline-block;
+    position: absolute;
+    transform: rotate3d(1, 0, 0, 68deg);
     opacity: 0;
 }
 .flower1{
@@ -236,14 +291,27 @@
     z-index: -1;
 }
 .font_wrap .hbtn{
-    padding: 16px 43px;
+    width: 190px;
+    height: 58px;
     margin-top: 36px;
     color: #0E1B2D;
     font-size: 16px;
     font-weight: bold;
     background: rgba(172, 221, 236,.5);
     border: 2px solid #fff;
+    box-sizing: border-box;
+    transition: background-color 0.8s ease, color 0.5s ease;
+    
 }
+.font_wrap .hbtn:hover{
+    width: 190px;
+    height: 58px;
+    border: none;
+    background-color: #0E1B2D;
+    color: #fff;
+    transition: background-color 0.8s ease, color 0.5s ease;
+}
+
 #header h2{
     font-size: 46px;
     font-weight: bold;
@@ -358,7 +426,7 @@
     }
     100%{
         width: 280px;
-        height: 80px;
+        height: 70px;
         border-width: 3px;
         opacity: 1;
     }
