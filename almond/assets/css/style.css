@@ -1,6 +1,20 @@
 
-*{margin: 0; padding: 0;}
-
+*{
+    margin: 0; padding: 0;
+}
+html{
+    font-size:0.625em;
+}
+h2,h3,h4,p{
+    color: #fff;
+}
+.hide{
+    overflow: hidden;
+    position: absolute;
+    width: 0; height: 0;
+    line-height: 0; 
+    text-indent: -9999px;
+}
 #wrap{
     overflow: hidden;
 }
@@ -11,6 +25,7 @@
     background: url(../img/blue_dia.jpg);
     background-position: top;
     background-size: contain;
+    overflow:hidden;
 }
 .container{
     width: 100%;
@@ -34,7 +49,7 @@
     display: block; 
     position: relative;
     color: #ffff;
-    font-size: 22px;
+    font-size: 2.2rem;
     font-weight: bold;
     text-align: center;
     transition: color 0.5s;
@@ -42,22 +57,6 @@
 .gnb ul li:hover a{
     color: #0E1B2D;
 }
-/* .gnb ul li a::after{
-    content: '';
-    width: 0%;
-    height: 4px;
-    background:-webkit-radial-gradient(circle, #fff, #4286f4, #373B44);
-    background:radial-gradient(circle, #fff, #4286f4, #373B44);
-    position: absolute;
-    bottom: -15%;
-    left: 50%;
-    border-radius: 10px;
-    transition: all 500ms ease;
-} */
-/* .gnb ul li:hover a::after{
-    left: 0%;
-    width: 100%;
-} */
 .logo {
     display: inline-block;
     width: 188px;
@@ -290,12 +289,12 @@
     top: -35px;
     z-index: -1;
 }
-.font_wrap .hbtn{
+.hbtn{
     width: 190px;
     height: 58px;
     margin-top: 36px;
     color: #0E1B2D;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: bold;
     background: rgba(172, 221, 236,.5);
     border: 2px solid #fff;
@@ -303,7 +302,7 @@
     transition: background-color 0.8s ease, color 0.5s ease;
     
 }
-.font_wrap .hbtn:hover{
+.hbtn:hover{
     width: 190px;
     height: 58px;
     border: none;
@@ -313,7 +312,7 @@
 }
 
 #header h2{
-    font-size: 46px;
+    font-size: 4.6rem;
     font-weight: bold;
     color: #fff;
     margin-bottom: 20px;
@@ -321,10 +320,10 @@
 }
 #header p{
     width: 500px;
-    font-size: 26px;
+    font-size: 2.6rem;
     color: #fff;
     font-weight: 500;
-    line-height: 44px;
+    line-height: 1.4;
     z-index: 5;
 }
 .prod_breez{
@@ -431,3 +430,158 @@
         opacity: 1;
     }
 } 
+#history{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+#history .container {
+    position: relative;
+    width: 100%;
+    max-width: 83.42%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+.opa{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    float:left;
+    background: url(../img/blue_dia.jpg) rgba(255,255,255,.5);
+    background-position: top;
+    background-size: contain;
+    opacity: .5;
+}
+.hright_text{
+    width: 45%;
+    display: inline-block;
+    position: absolute;
+    right: -50%;
+    top: 50%;
+    text-align: right;
+    z-index:2;
+    opacity:0
+}
+.hright_text::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 11vw;
+    height: 10vw;
+    background: url(../img/gren_bg.png)no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+.hright_text::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: -29%;
+    width: 11vw;
+    height: 10vw;
+    background: url(../img/gren_bg.png)no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+.hright_text::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: -10%;
+    top: 9%;
+    width: 10vw;
+    height: 10vw;
+    background: url(../img/beg_bg.png)no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+.hright_text h3{
+    font-size: 5.5rem;
+}
+.hright_text p{
+    margin-top: 5vh;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+.pack{
+    position: absolute;
+    right: 0;
+    top: -4%;
+    width: 39vw;
+    height: 31vh;
+    background: url(../img/pack.png)no-repeat;
+    background-size: cover;
+    opacity: 0;
+}
+.pack .p_al{
+    display: block;
+    position: absolute;
+    width: 5vh;
+    height: 6vh;
+    background: url(../img/almond_1.png) no-repeat;
+    background-size: contain;
+}
+.pack .p_al1{
+    left: 25%;
+    top: 10vw;
+}
+.pack .p_al2{
+    left: 10%;
+    top: 9vw;
+}
+.pack .p_al3{
+    left: 50%;
+    top: 12vw;
+}
+.pack .p_al4{
+    left: 60%;
+    top: 13vw;
+}
+.hleft{
+    position: absolute;
+    left: -60%;
+    top: 24%;
+    opacity:0;
+}
+.almond_can{
+    position: absolute;
+    top: 3vh;
+    left: 7vw;
+    width: 15vw;
+    height: 48vh;
+    background: url(../img/can.png)no-repeat;
+    background-size: cover;
+    transform: rotate(16deg);
+    z-index: 2;
+}
+.can_bg{
+    position: absolute;
+    left: 3%;
+    top: 24%;
+    width: 28vw;
+    height: 31vw;
+    border-radius: 54% 46% 42% 58% / 60% 58% 42% 40%;
+    background-image: linear-gradient(to right top, #9FE7FF, #fff 120%);
+    animation: wave 5s linear infinite;
+    box-shadow: #136A88 -36px 40px;
+}
+@keyframes wave{
+    20%{
+        border-radius: 45% 55% 62% 38% / 54% 51% 49% 47%;
+    }
+    40%{
+        border-radius: 45% 55% 49% 51% / 36% 51% 49% 64%;
+    }
+    60%{
+        border-radius: 60% 40% 57% 43% / 47% 62% 38% 53%;
+    }
+    80%{
+        border-radius: 60% 40% 32% 68% / 38% 36% 64% 62%;
+    }
+}
