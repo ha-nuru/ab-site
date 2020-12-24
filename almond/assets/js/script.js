@@ -37,11 +37,18 @@ var e1 = document.getElementsByClassName("flower2");
 
 var t2 = new TimelineLite()
 
-t2.staggerTo( [e0, e1], 1, {ease:Linear.ease, opacity: 1, right:-2+'%'});
+t2.staggerTo( [e0, e1], 0.6, {ease:Linear.ease, right:-2+'%'});
+
+var e0 = document.getElementsByClassName("p_al1");
+var e1 = document.getElementsByClassName("p_al2");
+var e2 = document.getElementsByClassName("p_al3");
+var e3 = document.getElementsByClassName("p_al4");
+var t4 = new TimelineLite()
+t4.staggerTo( [e0, e1, e2, e3], 3, {top:55+"vw", repeat:-1, ease: Bounce.easeOut} ,0.5);
 
 $(window).scroll(function(){
-let scroll_h = $(window).scrollTop();
-if(scroll_h >= $('#history').offset().top){
+let scroll_h = $(window).scrollTop() + 300;
+        if(scroll_h >= $('#history').offset().top){
         var t3 = new TimelineLite();
         t3.to($('.hleft'), .8, {
                 ease:Linear.power2,
@@ -58,13 +65,84 @@ if(scroll_h >= $('#history').offset().top){
                 opacity: 1,
                 top:0+'%'
         });
-     
-        var e0 = document.getElementsByClassName("p_al1");
-        var e1 = document.getElementsByClassName("p_al2");
-        var e2 = document.getElementsByClassName("p_al3");
-        var e3 = document.getElementsByClassName("p_al4");
-        var t4 = new TimelineLite()
-        t4.staggerTo( [e0, e1, e2, e3], 3, {top:50+"vw", repeat:-1, ease: Bounce.easeOut } ,0.5);
-       
 }
+});
+$(window).scroll(function(){
+        let scroll_h = $(window).scrollTop() + 500;
+        if(scroll_h >= $('#our_Way').offset().top){
+                var t4 = new TimelineLite();
+                t4.to($('.tit_cont'), .3,{
+                        ease:Linear.ease,
+                        top:13+'vh',
+                        opacity: 1,
+                });
+                var line_bg = document.getElementsByClassName( "line_bg" );
+                TweenLite.to( line_bg, 2, { width:100+'%'});
+                }
+                var w0 = document.getElementsByClassName("way_text1");
+                var w1 = document.getElementsByClassName("way_text2");
+                var w2 = document.getElementsByClassName("way_text3");
+                t4.staggerTo( [w0, w1, w2], 1, {opacity:1, top:100+'%'} ,0.5);
+})
+
+//our way svg
+var vv1 = new Vivus('svg_icon1',{duration: 100},vv1);
+var vv2 = new Vivus('svg_icon2',{duration: 400,},vv2);
+var vv3 = new Vivus('svg_icon3',{duration: 100,},vv3);
+
+$(window).scroll(function(){
+	var scTs = $(this);
+        scrollAni(scTs,'#svg_icon1',vv1);
+        scrollAni(scTs,'#svg_icon2',vv2);
+        scrollAni(scTs,'#svg_icon3',vv3);
+});
+
+function scrollAni(ts,svg,vv){
+        if(ts.scrollTop() > $(svg).offset().top - ts.height()){
+        vv.play();
+    }else{
+        repeat()
+    }
+}
+// mousemove
+$(document).ready(function(){
+        var object1=$('.heart');
+        var object2=$('.nutri');
+        var object3=$('.weight');
+        var object4=$('.hand');
+
+        var layer=$('#layer_w');
+        layer.mousemove(function(e){
+        var valueX=(e.pageX * -1 / 12); 
+        var valueY=(e.pageY * -1 / 12); 
+        object1.css({
+                'transform':'translate3d('+valueX+'px,'+valueY+'px,0)'
+        });
+        });
+
+        layer.mousemove(function(e){
+        var valueX=(e.pageX * -1 / 15); 
+        var valueY=(e.pageY * -1 / 25); 
+        
+        object2.css({
+                'transform':'translate3d('+valueX+'px,'+valueY+'px,0)'
+        });
+        });
+
+        layer.mousemove(function(e){
+        var valueX=(e.pageX * -1 / 15); 
+        var valueY=(e.pageY * -1 / 15); 
+        
+        object3.css({
+                'transform':'translate3d('+valueX+'px,'+valueY+'px,0)'
+        });
+        });
+        layer.mousemove(function(e){
+        var valueX=(e.pageX * -1 / 15); 
+        var valueY=(e.pageY * 1 / 18); 
+        
+        object4.css({
+                'transform':'translate3d('+valueX+'px,'+valueY+'px,0)'
+        });
+});
 })

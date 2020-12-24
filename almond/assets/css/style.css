@@ -1,13 +1,15 @@
-
+/* reset */
 *{
     margin: 0; padding: 0;
 }
 html{
     font-size:0.625em;
+    scroll-behavior: smooth;
 }
 h2,h3,h4,p{
     color: #fff;
 }
+img{width:100%;}
 .hide{
     overflow: hidden;
     position: absolute;
@@ -15,8 +17,30 @@ h2,h3,h4,p{
     line-height: 0; 
     text-indent: -9999px;
 }
+.clear::after,.clear::before{
+    content:'';
+    display: block;
+    clear:both;
+}
+/* layout */
 #wrap{
-    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* scroll-behavior: smooth;
+    scroll-snap-type: y mandatory; */
+} 
+/* #header,#history,#our_Way,#health{
+    scroll-snap-align: start;
+} */
+.container{
+    position: relative;
+    width: 100%;
+    max-width: 83.42%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+    box-sizing: border-box;
 }
 #header{
     width: 100%;
@@ -27,13 +51,8 @@ h2,h3,h4,p{
     background-size: contain;
     overflow:hidden;
 }
-.container{
-    width: 100%;
-    max-width: 83.42%;
-    height: 100%;
-    margin: 0 auto;
-    padding-top: 50px;
-    box-sizing: border-box;
+#header .container{
+   position: static;
 }
 .gnb{
         float: right;
@@ -49,7 +68,7 @@ h2,h3,h4,p{
     display: block; 
     position: relative;
     color: #ffff;
-    font-size: 2.2rem;
+    font-size: 1.2vw;
     font-weight: bold;
     text-align: center;
     transition: color 0.5s;
@@ -59,8 +78,8 @@ h2,h3,h4,p{
 }
 .logo {
     display: inline-block;
-    width: 188px;
-    height: 115px;
+    width: 9.8vw;
+    height: 6vw;
     background: url(../img/logo.png) no-repeat;
     background-size: contain;
     position: absolute;
@@ -69,12 +88,12 @@ h2,h3,h4,p{
 }
 .leaf{
     width: 25%;
-    height: 448px;
+    height: 23vw;
     background: url(../img/leaf_alomond1.png) no-repeat;
     background-size: contain;
     position: absolute;
     left: -200px;
-    top: 32px;
+    top: 2vw;
     transform: rotate(10deg);
     opacity: 0;
 }
@@ -91,7 +110,7 @@ h2,h3,h4,p{
 .fruit{
     display: block;
     width: 23%;
-    height: 214px;
+    height: 11vw;
     position: absolute;
     left: 0;
     top: 18px;
@@ -144,118 +163,90 @@ h2,h3,h4,p{
     top: 361px;
     transform: rotate(19deg);
 }
-/* .palmond::after{
-    content: '';
-    display: inline-block;
-    width: 45px;
-    height: 67px;
-    background: url(../img/almond_1.png) no-repeat;
-    background-size: contain;
-    position: absolute;
-    left: 59%;
-    top: 123%;
-}
-.palmond::before{
-    content: '';
-    display: inline-block;
-    width: 45px;
-    height: 67px;
-    background: url(../img/almond_1.png) no-repeat;
-    background-size: contain;
-    position: absolute;
-    left: 20%;
-    top: 159%;
-    transform: rotate3d(6, 0, 9, 45deg);
-} */
-.dalmond{
-    width: 24%;
-    height: 366px;
-    background: url(../img/almond.png)no-repeat;
-    background-size: cover;
-    bottom: -16%;
-    left: 22%;
-    display: inline-block;
-    position: absolute;
-    transform: rotate3d(1, 0, 0, 68deg);
-    opacity: 0;
-}
 .flower1{
-    width: 21%;
-    height: 322px;
+    width: 23vw;
+    height: 15vw;
     background: url(../img/blossom_f.png)no-repeat;
     background-size: contain;
     position: absolute;
     right: -10%;
-    top: 168px;
+    top: 17vh;
     transform: rotate(-33deg);
     z-index: 10;
-    opacity: 0;
 }
 .petal_fir{
-    width: 56px;
-    height: 73px;
+    width: 3vw;
+    height: 4vw;
     background: url(../img/petal.png)no-repeat;
     background-size: cover;
     position: absolute;
-    left: 18px;
-    top: 25px;
-    transform: rotate(-48deg);
-    animation: petal1 2s ease-out 2.5s;
+    left: 95%;
+    top: -10px;
+    transform: rotate(-106deg);
+    animation: petal1 1s ease-out 2.5s;
     animation-fill-mode: forwards;
+    z-index: 10;
 }
 .petal_sec{
-    width: 56px;
-    height: 73px;
+    width: 3vw;
+    height: 4vw;
     background: url(../img/petal.png)no-repeat;
     background-size: cover;
     position: absolute;
-    left: 28%;
-    top: -16px;
-    animation: peta2 4s ease-out 3.5s;
+    left: 100%;
+    top: -10%;
+    transform: rotate(-45deg);
+    transform: rotate3d(7, 7, -5, 66deg);
+    animation: peta2 3s ease-out 3.5s;
     animation-fill-mode: forwards;
+    z-index: 10;
  }
  .petal_thir{
-    width: 40px;
-    height: 50px;
+    width: 2.1vw;
+    height: 3vw;
     background: url(../img/petal2.png)no-repeat;
     background-size: cover;
     position: absolute;
-    left: 20%;
-    top: 40%;
+    left: 105%;
+    top: 10%;
+    transform: rotate(-33deg);
     animation: peta3 4s ease-out 5s;
     animation-fill-mode: forwards;
+    z-index: 10;
  }
 @keyframes petal1{
     0%{
-        left: 18px;
+        left: 95%;
+        top: 1%;
         transform: rotate(-48deg);
     }
     100%{
-        left: -49%;
-        top: -18px;
-        transform: rotate3d(15, 14, -4, 55deg);
+        left: 59%;
+        top: 13%;
+        transform: rotate3d(8, 3, -4, 67deg);
     }
 }
 @keyframes peta2{
     0%{
-        left: 28%;
+        left: 100%;
         transform: rotate(-45deg);
-        
     }
     100%{
-        left: -195%;
-        top: 47%;
-        transform: rotate3d(7, 7, -5, 66deg);
+        left: -14%;
+        top: 86%;
+        transform: rotate3d(4, 2, -4, 70deg);
     }
 }
 @keyframes peta3{
     0%{
-        left: 20%;
+        left: 105%;
+        top: 10%;
+        transform: rotate(-33deg);
     }
     100%{
-        left: -82%;
-        top: 141%;
-        transform: rotate3d(7, 7, -5, 66deg);
+        left: 84%;
+        top: 90%;
+        transform: rotate3d(5, 2, -4, 60deg);
     }
 }
 .flower2{
@@ -267,8 +258,7 @@ h2,h3,h4,p{
     right: -24%;
     bottom: 40px;
     transform: rotate(176deg);
-    z-index: 10;
-    opacity: 0;
+    z-index: 30;
 }
 .font_wrap{
     position: absolute;
@@ -312,7 +302,7 @@ h2,h3,h4,p{
 }
 
 #header h2{
-    font-size: 4.6rem;
+    font-size: 2.4vw;
     font-weight: bold;
     color: #fff;
     margin-bottom: 20px;
@@ -328,31 +318,32 @@ h2,h3,h4,p{
 }
 .prod_breez{
     width: 30%;
-    height: 613px;
+    height: 32vw;
     background: url(../img/breez_poroduct.png) no-repeat;
     background-size: contain;
     position: absolute;
     right: 18%;
-    bottom: 30px;
+    bottom: 50px;
     opacity: 0;
 }
 .drop_water{
     display: block;
     position: absolute;
     left: -14%;
-    bottom: -19%;
+    top: 66%;
     width: 40%;
-    height: 500px;
+    height: 26vw;
     opacity: 0;
 }
 .drop_water > div{
-    margin: 200px auto;
+    margin: 14.5vw auto;
 }
 .drop_water .drop{
     position: relative;
     width: 20px;
     height: 20px;
     top: -50%;
+    left: -2%;
     margin: 0 auto;
     background: #F2E5CD;
     border-radius: 20px;
@@ -432,11 +423,10 @@ h2,h3,h4,p{
 } 
 #history{
     width: 100%;
-    height: 100vh;
     position: relative;
     overflow: hidden;
 }
-#history .container {
+#history .container{
     position: relative;
     width: 100%;
     max-width: 83.42%;
@@ -445,15 +435,15 @@ h2,h3,h4,p{
     padding-top: 50px;
     box-sizing: border-box;
 }
-.opa{
+#history,#our_Way, #health{
     width: 100%;
     height: 100%;
     position: relative;
-    float:left;
-    background: url(../img/blue_dia.jpg) rgba(255,255,255,.5);
+    overflow: hidden;
+    background: url(../img/op_bg.png);
     background-position: top;
     background-size: contain;
-    opacity: .5;
+    padding: 1vw 0 3vw;
 }
 .hright_text{
     width: 45%;
@@ -547,27 +537,37 @@ h2,h3,h4,p{
     position: absolute;
     left: -60%;
     top: 24%;
+    width: 30%;
+    height: 52%;
     opacity:0;
 }
 .almond_can{
     position: absolute;
-    top: 3vh;
-    left: 7vw;
+    top: 6%;
+    left: 30%;
     width: 15vw;
-    height: 48vh;
+    height: 24vw;
     background: url(../img/can.png)no-repeat;
     background-size: cover;
     transform: rotate(16deg);
+    animation: shake 0.6s alternate infinite;
     z-index: 2;
 }
+@keyframes shake{
+    0%{
+        transform : rotate(0deg) translateX(0px)};
+    50%{
+        transform : rotate(-10deg) translateX(-10px)};
+    75%{
+        transform : rotate(10deg) translateX(10px)};
+    100%{
+        transform : rotate(0deg) translateX(0px)};
+}
 .can_bg{
-    position: absolute;
-    left: 3%;
-    top: 24%;
     width: 28vw;
     height: 31vw;
     border-radius: 54% 46% 42% 58% / 60% 58% 42% 40%;
-    background-image: linear-gradient(to right top, #9FE7FF, #fff 120%);
+    background-image: linear-gradient(to right top, #9FE7FF, #fff 150%);
     animation: wave 5s linear infinite;
     box-shadow: #136A88 -36px 40px;
 }
@@ -584,4 +584,230 @@ h2,h3,h4,p{
     80%{
         border-radius: 60% 40% 32% 68% / 38% 36% 64% 62%;
     }
+}
+#our_Way h3, #health h3{
+    position: absolute;
+    left: 50%;
+    top: -10vh;
+    transform: translate(-50%);
+    font-size: 4.5rem;
+    z-index: 2;
+    opacity: 0;
+}
+#our_Way h3::after, #health h3::after{
+    content:'';
+    display:inline-block;
+    width: 16rem;
+    height: 8rem;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translate(-50%);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='110' viewBox='0 0 220 110'%3E%3Cg id='제외_1' data-name='제외 1' fill='%23029ace'%3E%3Cpath d='M 109.9998016357422 107.2047119140625 L 5.590155601501465 54.99990081787109 L 109.9998016357422 2.795090198516846 L 214.4094543457031 54.99990081787109 L 109.9998016357422 107.2047119140625 Z' stroke='none'/%3E%3Cpath d='M 109.9998016357422 104.4096221923828 L 208.8192443847656 54.99990081787109 L 109.9998016357422 5.590190887451172 L 11.18033790588379 54.99989318847656 L 109.9998016357422 104.4096221923828 M 109.9995651245117 109.9998931884766 L 109.9998016357422 109.9997940063477 L 1.635742137295892e-06 54.99989318847656 L 109.9998016357422 2.470499748596922e-05 L 219.9958343505859 54.99802398681641 L 219.9996032714844 54.99989318847656 L 109.9998016357422 109.9997940063477 L 109.9995651245117 109.9998931884766 Z' stroke='none' fill='%23f8924f'/%3E%3C/g%3E%3C/svg%3E") no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+.line_bg{
+    width: 0%;
+    height: 0.3vw;
+    position:absolute;
+    top: 44%;
+    left: 0;
+    transform: translateY(-44%);
+    /* background-color: #029ACE; */
+    background-color: #fff;
+}
+.way_wrap {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    width: 90%;
+    height: auto;
+    transform: translate(-50%,-40%);
+}
+.way{
+    position: relative;
+    float: left;
+    width: 33.333%;
+    height: 20vw;
+    background: url(../img/way2.png)no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 1;
+}
+.way_sec{
+    background-image: url(../img/way1.png);
+   
+}
+.way_thr{
+    background-image: url(../img/way3.png);
+}
+.rond_svg{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 40%;
+    height: 48%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    background-color: rgba(255,255,255,.7);
+    /* background-color: rgba(172,221,236,.7); */
+    opacity: 1;
+}
+.rond_svg >svg{
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.way_thr .rond_svg >svg{
+    width: 75%;
+    height: 75%;
+}
+.way_text{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 12vw;
+    margin: 1vw 1.5% 0;
+    background-color: rgba(255,255,255,.5);
+    padding: 2vw 2vw 1.6vw;
+    border: 2px solid #ffff;
+    box-sizing: border-box;
+    text-align: center;
+    opacity: 0;
+}
+.way .way_text2{ 
+    padding: 2vw 2vw 3.2vw;
+}
+.way .way_text3{
+    padding: 2vw 2vw 1.8vw;
+}
+.way_text h4{
+    font-size:2.5rem;
+    color:#0E1B2D;
+}
+.way_text p{
+    font-size: 2rem;
+    margin-top: 0.6vw;
+    color: #0E1B2D;
+    line-height: 1.5;
+    font-weight: 500;
+}
+#health{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+#layer_w{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100vh;
+}
+#health .hand{
+    width: 22vw;
+    height: 27vw;
+    display: inline-block;
+    position: absolute;
+    left: 40%;
+    top: 60%;
+    margin-top: -13vw;
+}
+#health .nutri{
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    width: 11vw;
+}
+#health .heart{
+    position: absolute;
+    left: 70%;
+    top: 80%;
+    width: 7vw;
+    animation:heart_b 1.5s infinite;
+}
+#health .nutri::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 11vw;
+    height: 11vw;
+    background: url(../img/fruit.png)no-repeat;
+    background-size: contain;
+    opacity:0;
+    animation:nutri_b 2s .5s infinite;
+}
+#health .nutri::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 11vw;
+    height: 11vw;
+    background: url(../img/milk_B.png)no-repeat;
+    background-size: contain;
+    opacity:0;
+    animation:nutri_b 2s 1s infinite;
+}
+#health .weight{
+    position: absolute;
+    top: 75%;
+    left: 20%;
+    width: 9vw;
+}
+#health .weight:after{
+    content: '';
+    display: inline-block;
+    background:url(../img/line.png)no-repeat;
+    background-size: contain;
+    width:0.7vw;
+    height: 1.8vw;
+    position:absolute;
+    left: 50%;
+    top: 12%;
+    margin-left: -0.35vw;
+    animation: weig_lin 1s infinite;
+}
+@keyframes weig_lin{
+    0%{
+        transform:rotate(0);
+    }
+    40%{
+        transform:rotate(-60deg);
+        left:49%;
+        top:13%;
+    }
+    80%{
+        transform:rotate(45deg);
+        left: 50%;
+        top:13%;
+    }
+    30%{
+        transform:rotate(-60deg);
+        left: 49%;
+        top:13.5%;
+    }
+}
+@keyframes heart_b{
+
+  90%{
+    width: 8vw;
+  }
+}
+.healt_l  p{
+    display: inline-block;
+    position: absolute;
+    bottom: -2vw;
+    left: 50%;
+    font-size: 2.4rem;
+    white-space: nowrap;
+    transform: translateX(-50%);
+}
+@keyframes nutri_b{
+    70%{opacity: 1;}
 }
