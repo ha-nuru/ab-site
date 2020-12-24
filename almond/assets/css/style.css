@@ -421,10 +421,16 @@ img{width:100%;}
         opacity: 1;
     }
 } 
-#history{
+#history,#our_Way, #health{
     width: 100%;
+    height: 100%;
     position: relative;
+    padding: 1vw 0 3vw;
     overflow: hidden;
+    background: url(../img/op_bg.png);
+    background-position: top;
+    background-size: contain;
+    
 }
 #history .container{
     position: relative;
@@ -434,16 +440,6 @@ img{width:100%;}
     margin: 0 auto;
     padding-top: 50px;
     box-sizing: border-box;
-}
-#history,#our_Way, #health{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    background: url(../img/op_bg.png);
-    background-position: top;
-    background-size: contain;
-    padding: 1vw 0 3vw;
 }
 .hright_text{
     width: 45%;
@@ -585,12 +581,15 @@ img{width:100%;}
         border-radius: 60% 40% 32% 68% / 38% 36% 64% 62%;
     }
 }
+.tit_cont{
+    font-size: 4.5rem;
+    text-align: center;
+}
 #our_Way h3, #health h3{
     position: absolute;
     left: 50%;
     top: -10vh;
     transform: translate(-50%);
-    font-size: 4.5rem;
     z-index: 2;
     opacity: 0;
 }
@@ -611,19 +610,19 @@ img{width:100%;}
     width: 0%;
     height: 0.3vw;
     position:absolute;
-    top: 44%;
+    top: 45%;
     left: 0;
-    transform: translateY(-44%);
+    transform: translateY(-45%);
     /* background-color: #029ACE; */
     background-color: #fff;
 }
 .way_wrap {
     position: absolute;
     left: 50%;
-    top: 40%;
+    top: 45%;
     width: 90%;
     height: auto;
-    transform: translate(-50%,-40%);
+    transform: translate(-50%,-45%);
 }
 .way{
     position: relative;
@@ -699,7 +698,6 @@ img{width:100%;}
 #health{
     height: 100vh;
     width: 100%;
-    position: absolute;
 }
 #layer_w{
     position: absolute;
@@ -740,7 +738,7 @@ img{width:100%;}
     background: url(../img/fruit.png)no-repeat;
     background-size: contain;
     opacity:0;
-    animation:nutri_b 2s .5s infinite;
+    animation:nutri_b 2s infinite;
 }
 #health .nutri::before{
     content: '';
@@ -752,7 +750,7 @@ img{width:100%;}
     background: url(../img/milk_B.png)no-repeat;
     background-size: contain;
     opacity:0;
-    animation:nutri_b 2s 1s infinite;
+    animation:nutri_b 2s infinite;
 }
 #health .weight{
     position: absolute;
@@ -787,11 +785,6 @@ img{width:100%;}
         left: 50%;
         top:13%;
     }
-    30%{
-        transform:rotate(-60deg);
-        left: 49%;
-        top:13.5%;
-    }
 }
 @keyframes heart_b{
 
@@ -810,4 +803,10 @@ img{width:100%;}
 }
 @keyframes nutri_b{
     70%{opacity: 1;}
+}
+
+/* legacy */
+#legacy h3{
+    color:#029ACE;
+    margin-top:12vw;
 }
