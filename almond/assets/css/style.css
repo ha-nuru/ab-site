@@ -26,13 +26,9 @@ img{width:100%;}
 #wrap{
     position: relative;
     width: 100%;
-    height: 100vh;
-    /* scroll-behavior: smooth;
-    scroll-snap-type: y mandatory; */
+    height: 100%;
+    overflow:hidden;
 } 
-/* #header,#history,#our_Way,#health{
-    scroll-snap-align: start;
-} */
 .container{
     position: relative;
     width: 100%;
@@ -215,14 +211,14 @@ img{width:100%;}
     z-index: 10;
  }
 @keyframes petal1{
-    0%{
+    /* 0%{
         left: 95%;
         top: 1%;
         transform: rotate(-48deg);
-    }
+    } */
     100%{
         left: 59%;
-        top: 13%;
+        top: 4vw;
         transform: rotate3d(8, 3, -4, 67deg);
     }
 }
@@ -423,7 +419,7 @@ img{width:100%;}
 } 
 #history,#our_Way, #health{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: relative;
     padding: 1vw 0 3vw;
     overflow: hidden;
@@ -711,9 +707,10 @@ img{width:100%;}
     height: 27vw;
     display: inline-block;
     position: absolute;
-    left: 40%;
+    left: 50%;
     top: 60%;
     margin-top: -13vw;
+    margin-left: -8vw;
 }
 #health .nutri{
     position: absolute;
@@ -804,9 +801,185 @@ img{width:100%;}
 @keyframes nutri_b{
     70%{opacity: 1;}
 }
-
 /* legacy */
-#legacy h3{
+#legacy{
+    position:relative;
+    width:100%;
+    height:400vh;
+    padding: 1vw 0 3vw;
+}
+#legacy h3.tit_cont1{
     color:#029ACE;
-    margin-top:12vw;
+    position:absolute;
+    left:50%;
+    top:-16vh;
+    transform: translateX(-50%);
+    font-size: 4.5rem;
+    text-align: center;
+    z-index: 2;
+    opacity:0;
+}
+.lagacy_sec{
+    width:100%;
+    height: 100vh;
+    position:relative;
+}
+.sec1 .left_f{
+    position: absolute;
+    left: -10%;
+    top: 30vw;
+    width: 36vw;
+    height: 20vw;
+    background: url(../img/legacy_1.png)no-repeat;
+    background-size: cover;
+    transform: rotate(-3deg);
+    opacity: 0;
+}
+.sec1 .right_f{
+    position:absolute;
+    right:-10%;
+    top: 30vw;
+    width: 50%;
+    opacity: 0;
+}
+.sec1 .right_f>div{
+    position: absolute;
+    right: -27%;
+    top: -15vw;
+    width: 32vw;
+    height: 22vw;
+    background: url(../img/blossom_2.png)no-repeat;
+    background-size: cover;
+    transform: rotate(-180deg);
+}
+.sec2 .left_f{
+    position: absolute;
+    left: -10%;
+    top: 30vw;
+    width: 50%;
+    opacity:0;
+}
+.sec2 .right_f{
+    position: absolute;
+    right: -10%;
+    top: 30vw;
+    width: 36vw;
+    height: 20vw;
+    background: url(../img/legacy_2.png)no-repeat;
+    background-size: cover;
+    transform: rotate(3deg);
+    opacity:0;
+}
+.sec2 .left_f>div{
+    position: absolute;
+    left: -27%;
+    top: -15vw;
+    width: 32vw;
+    height: 22vw;
+    background: url(../img/leaf_alomond1.png)no-repeat;
+    background-size: cover;
+}
+.sec3{
+    height:130vh;
+}
+.sec3 .left_f{
+    position: absolute;
+    left: 3%;
+    top: 24vw;
+    width: 30vw;
+    height: 30vw;
+    background: url(../img/legacy_3.png)no-repeat;
+    background-size: cover;
+    transform: rotate(-3deg);
+}
+.sec3 .right_f{
+    position: absolute;
+    right: 0%;
+    top: 30vw;
+    width: 50%;
+}
+.sec3 .right_f>div{
+    position: absolute;
+    right: 0;
+    top: -31vw;
+    width: 11vw;
+    height: 16vw;
+    background: url(../img/float_almond1.png)no-repeat;
+    background-size: contain;
+}
+.sec3 .right_f>div:nth-child(2){
+    position: absolute;
+    right: -4vw;
+    top: -15vw;
+    width: 13vw;
+    height: 19vw;
+    background: url(../img/float_almond3.png)no-repeat;
+    background-size: contain;
+}
+.sec3 .right_f>div:nth-child(3){
+    position: absolute;
+    right: -4vw;
+    top: 5vw;
+    width: 13vw;
+    height: 19vw;
+    background: url(../img/float_almond2.png)no-repeat;
+    background-size: contain;
+}
+.sec3 .right_f p{
+    position: absolute;
+    top: 13vw;
+    right: 0;
+    width: 90%;
+    color: #029ACE;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: right;
+    line-height: 1.5;
+}
+.right_f p{
+    position: absolute;
+    top: 16vw;
+    right: 0;
+    width: 90%;
+    color: #029ACE;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: right;
+    line-height: 1.5;
+}
+.left_f p{
+    position: absolute;
+    top: 16vw;
+    left: 0;
+    width: 90%;
+    color: #029ACE;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: left;
+    line-height: 1.5;
+}
+.legac_line{
+    width:3vw;
+    height: 100%;
+    margin: 10vw auto 0;
+    position: absolute;
+    left:50%;
+    margin-left:-1.5vw;
+}
+.dia_svg{
+    width:5vw;
+    height:3vw;
+    transform: translateX(-1vw);
+    position: absolute;
+    top: -10vw;
+    background: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 24' class='dia_svg'%3E%3Cpath fill-rule='evenodd' d='M22 0l22 12-22 12L0 12' fill='%23029ACE' %3E%3C/path%3E%3C/svg%3E") no-repeat;
+    opacity:0;
+}
+.dia_line1{
+    width:0.2vw;
+    background:#029ACE;
+    position:absolute;
+    left:50%;
+    top: 0%;
+    margin-left:-0.1vw;
 }
