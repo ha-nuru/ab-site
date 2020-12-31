@@ -1032,9 +1032,22 @@ img{width:100%;}
     -webkit-filter: grayscale(100%) brightness(90%) sepia(100%) hue-rotate(-200deg) saturate(176%) contrast(0.9);
     transform: perspective(1000px) rotate(0);
     opacity: 0;
-    animation:rota 2s linear 2;
+    
+}
+.product_wrap a .prod_list.pro_ani{
+    animation:rota 2s linear 1s;
     transition: filter .2s linear;
 }
+.product_wrap a:nth-child(2) .prod_list.pro_ani{
+    animation-delay: 1.2s;
+}
+.product_wrap a:nth-child(3) .prod_list.pro_ani{
+    animation-delay: 1.3s;
+}
+.product_wrap a:nth-child(4) .prod_list.pro_ani{
+    animation-delay: 1.4s;
+}
+
 @keyframes rota{
     0%{
         transform: rotateY(0);

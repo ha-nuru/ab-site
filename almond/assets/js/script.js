@@ -183,8 +183,8 @@ $(window).scroll(function(){
         }
 })
 $(window).scroll(function(){
-        let scroll_l = $(window).scrollTop()+500;
-        if(scroll_l = $('.tit_cont1').offset().top){
+        let scroll_l = $(window).scrollTop()+200;
+        if(scroll_l >= $('#service').offset().top){
                 var t6 = new TimelineLite();
                 t6.to($('#service .tit_cont1'), .6,{
                         ease:Linear.ease,
@@ -195,8 +195,6 @@ $(window).scroll(function(){
                         ease:Linear.ease,
                         opacity: 1,
                 })
-                // t6.fromTo( $('.prod_list'), 1.5, { rotationY:0, ease:Linear.easeNone}, { rotationY:360,ease:Linear.easeNone},{ rotationY:'0',ease:Linear.easeNone});
-
                 var s1 = document.getElementsByClassName("ser_text1");
                 var s2 = document.getElementsByClassName("ser_text2");
                 var s3 = document.getElementsByClassName("ser_text3");
@@ -206,8 +204,16 @@ $(window).scroll(function(){
         }else{
                 t6.pause();   
         }
-})
+});
 
+$(window).scroll(function(){
+        let sa = $(window).scrollTop()+200;
+        if(sa >= $('#service').offset().top){
+        $('.prod_list').addClass('pro_ani');
+        }else{
+        $('.prod_list').removeClass('pro_ani');
+        }
+});  
 //our way svg
 var vv1 = new Vivus('svg_icon1',{duration: 100},vv1);
 var vv2 = new Vivus('svg_icon2',{duration: 400,},vv2);
