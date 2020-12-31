@@ -1032,8 +1032,18 @@ img{width:100%;}
     -webkit-filter: grayscale(100%) brightness(90%) sepia(100%) hue-rotate(-200deg) saturate(176%) contrast(0.9);
     transform: perspective(1000px) rotate(0);
     opacity: 0;
+    animation:rota 2s linear 2;
     transition: filter .2s linear;
 }
+@keyframes rota{
+    0%{
+        transform: rotateY(0);
+    }
+    80%{
+        transform: rotateY(360deg);
+    }
+}
+.prod_list
 .prod_list:hover{
     filter:none;
 }
