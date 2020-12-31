@@ -183,7 +183,7 @@ $(window).scroll(function(){
         }
 })
 $(window).scroll(function(){
-        let scroll_l = $(window).scrollTop();
+        let scroll_l = $(window).scrollTop()+500;
         if(scroll_l >= $('#service').offset().top){
                 var t6 = new TimelineLite();
                 t6.to($('#service .tit_cont1'), .6,{
@@ -195,8 +195,16 @@ $(window).scroll(function(){
                         ease:Linear.ease,
                         opacity: 1,
                 })
-                t6.fromTo( $('.prod_list'), 1.5, { rotationY:0, ease:Linear.easeNone}, { rotationY:360,ease:Linear.easeNone},{ rotationY:'none',ease:Linear.easeNone});
+                t6.fromTo( $('.prod_list'), 1.5, { rotationY:0, ease:Linear.easeNone}, { rotationY:360,ease:Linear.easeNone},{ rotationY:'0',ease:Linear.easeNone});
+
+                var s1 = document.getElementsByClassName("ser_text1");
+                var s2 = document.getElementsByClassName("ser_text2");
+                var s3 = document.getElementsByClassName("ser_text3");
+                var s4 = document.getElementsByClassName("ser_text4");
+                t6.staggerTo( [s1, s2, s3, s4], 1, {opacity:1} ,0.2);
               
+        }else{
+                t6.pause();   
         }
 })
 
