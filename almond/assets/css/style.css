@@ -147,29 +147,6 @@ img {
     transform: rotate(0deg);
   }
 }
-.dr_almond {
-  opacity: 0;
-}
-.halmond {
-  width: 45px;
-  height: 67px;
-  background: url(../img/almond_1.png) no-repeat;
-  background-size: contain;
-  position: absolute;
-  left: 24%;
-  top: 292px;
-  transform: rotate3d(1, 1, -2, 71deg);
-}
-.palmond {
-  width: 14%;
-  height: 306px;
-  background: url(../img/drop_almond.png) no-repeat;
-  background-size: contain;
-  position: absolute;
-  left: 26%;
-  top: 361px;
-  transform: rotate(19deg);
-}
 .flower1 {
   width: 23vw;
   height: 15vw;
@@ -192,7 +169,8 @@ img {
   transform: rotate(-106deg);
   animation: petal1 1s ease-out 2.5s;
   animation-fill-mode: forwards;
-  z-index: 10;
+  z-index: 1;
+  opacity: 0;
 }
 .petal_sec {
   width: 3vw;
@@ -206,7 +184,8 @@ img {
   transform: rotate3d(7, 7, -5, 66deg);
   animation: peta2 3s ease-out 3.5s;
   animation-fill-mode: forwards;
-  z-index: 10;
+  z-index: 1;
+  opacity: 0;
 }
 .petal_thir {
   width: 2.1vw;
@@ -219,29 +198,31 @@ img {
   transform: rotate(-33deg);
   animation: peta3 4s ease-out 5s;
   animation-fill-mode: forwards;
-  z-index: 10;
+  z-index: 1;
+  opacity: 0;
 }
 @keyframes petal1 {
-  /* 0%{
-        left: 95%;
-        top: 1%;
-        transform: rotate(-48deg);
-    } */
+  0% {
+    opacity: 1;
+  }
   100% {
     left: 59%;
     top: 4vw;
     transform: rotate3d(8, 3, -4, 67deg);
+    opacity: 1;
   }
 }
 @keyframes peta2 {
   0% {
     left: 100%;
     transform: rotate(-45deg);
+    opacity: 1;
   }
   100% {
     left: -14%;
     top: 86%;
     transform: rotate3d(4, 2, -4, 70deg);
+    opacity: 1;
   }
 }
 @keyframes peta3 {
@@ -249,11 +230,13 @@ img {
     left: 105%;
     top: 10%;
     transform: rotate(-33deg);
+    opacity: 1;
   }
   100% {
     left: 84%;
     top: 90%;
     transform: rotate3d(5, 2, -4, 60deg);
+    opacity: 1;
   }
 }
 .flower2 {
@@ -269,12 +252,12 @@ img {
 }
 .font_wrap {
   position: absolute;
-  bottom: 153px;
+  bottom: 9vw;
   left: 15%;
   z-index: 10;
   opacity: 0;
 }
-.font_wrap::after {
+/* .font_wrap::after {
   content: "";
   display: block;
   width: 33%;
@@ -285,13 +268,13 @@ img {
   left: -15%;
   top: -35px;
   z-index: -1;
-}
+} */
 .hbtn {
-  width: 190px;
-  height: 58px;
-  margin-top: 36px;
+  width: 10vw;
+  height: 3vw;
+  margin-top: 2vw;
   color: #0e1b2d;
-  font-size: 1.6rem;
+  font-size: 0.8vw;
   font-weight: bold;
   background: rgba(172, 221, 236, 0.5);
   border: 2px solid #fff;
@@ -299,24 +282,24 @@ img {
   transition: background-color 0.8s ease, color 0.5s ease;
 }
 .hbtn:hover {
-  width: 190px;
-  height: 58px;
+  width: 10vw;
+  height: 3vw;
   border: none;
   background-color: #0e1b2d;
   color: #fff;
   transition: background-color 0.8s ease, color 0.5s ease;
 }
-
 #header h2 {
-  font-size: 2.4vw;
+  font-size: 2.6vw;
   font-weight: bold;
   color: #fff;
   margin-bottom: 20px;
   z-index: 5;
+  display: inline-block;
 }
 #header p {
-  width: 500px;
-  font-size: 2.6rem;
+  width: 40%;
+  font-size: 1.1vw;
   color: #fff;
   font-weight: 500;
   line-height: 1.4;
@@ -552,22 +535,16 @@ img {
   height: 24vw;
   background: url(../img/can.png) no-repeat;
   background-size: cover;
-  transform: rotate(16deg);
-  animation: shake 0.6s alternate infinite;
+  transform: rotate(0);
+  animation: shake 1s linear infinite;
   z-index: 2;
 }
 @keyframes shake {
-  0% {
-    transform: rotate(0deg) translateX(0px);
+  20% {
+    transform: rotate(-16deg);
   }
-  50% {
-    transform: rotate(-10deg) translateX(-10px);
-  }
-  75% {
-    transform: rotate(10deg) translateX(10px);
-  }
-  100% {
-    transform: rotate(0deg) translateX(0px);
+   80% {
+    transform: rotate(15deg);
   }
 }
 .can_bg {
@@ -663,8 +640,6 @@ img {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.7);
-  /* background-color: rgba(172,221,236,.7); */
-  opacity: 1;
 }
 .rond_svg > svg {
   width: 70%;
@@ -673,6 +648,7 @@ img {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
 }
 .way_thr .rond_svg > svg {
   width: 75%;

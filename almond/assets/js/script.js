@@ -14,12 +14,6 @@ tl.to($(".drop_water"), 0.3, {
 tl.to($(".font_wrap"), 0.3, {
   opacity: 1,
 });
-tl.to($(".dr_almond"), 0.3, {
-  opacity: 1,
-});
-tl.to($(".dalmond"), 0.3, {
-  opacity: 1,
-});
 
 var e0 = document.getElementsByClassName("flower1");
 var e1 = document.getElementsByClassName("flower2");
@@ -61,6 +55,7 @@ $(window).scroll(function () {
     });
   }
 });
+
 $(window).scroll(function () {
   let scroll_h = $(window).scrollTop() + 500;
   if (scroll_h >= $("#our_Way").offset().top) {
@@ -70,14 +65,19 @@ $(window).scroll(function () {
       top: 13 + "vh",
       opacity: 1,
     });
+    t4.to($(".op_svg"), 0.2, {
+      ease: Linear.ease,
+      opacity: 1,
+    });
     var line_bg = document.getElementsByClassName("line_bg");
     TweenLite.to(line_bg, 2, { width: 100 + "%" });
+    var w0 = document.getElementsByClassName("way_text1");
+    var w1 = document.getElementsByClassName("way_text2");
+    var w2 = document.getElementsByClassName("way_text3");
+    t4.staggerTo([w0, w1, w2], 1, { opacity: 1, top: 100 + "%" }, 0.5);
   }
-  var w0 = document.getElementsByClassName("way_text1");
-  var w1 = document.getElementsByClassName("way_text2");
-  var w2 = document.getElementsByClassName("way_text3");
-  t4.staggerTo([w0, w1, w2], 1, { opacity: 1, top: 100 + "%" }, 0.5);
 });
+
 $(window).scroll(function () {
   let scroll_h = $(window).scrollTop() + 500;
   if (scroll_h >= $("#health").offset().top) {
@@ -99,6 +99,7 @@ $(window).scroll(function () {
     });
   }
 });
+
 $(window).scroll(function () {
   let scroll_l = $(window).scrollTop() + 500;
   if (scroll_l >= $("#legacy").offset().top) {
@@ -110,6 +111,7 @@ $(window).scroll(function () {
     });
   }
 });
+
 $(window).scroll(function () {
   let scroll_l = $(window).scrollTop();
   if (scroll_l >= $(".sec1").offset().top) {
@@ -136,6 +138,7 @@ $(window).scroll(function () {
     });
   }
 });
+
 $(window).scroll(function () {
   let scroll_l = $(window).scrollTop();
   if (scroll_l >= $(".sec2").offset().top) {
@@ -152,6 +155,7 @@ $(window).scroll(function () {
     });
   }
 });
+
 $(window).scroll(function () {
   let scroll_l = $(window).scrollTop() + 500;
   if (scroll_l >= $(".sec3").offset().top) {
@@ -170,6 +174,7 @@ $(window).scroll(function () {
     });
   }
 });
+
 $(window).scroll(function () {
   let scroll_l = $(window).scrollTop();
   if (scroll_l >= $(".sec3").offset().top) {
@@ -186,6 +191,7 @@ $(window).scroll(function () {
     });
   }
 });
+
 $(window).scroll(function () {
   let scroll_l = $(window).scrollTop() + 200;
   if (scroll_l >= $("#service").offset().top) {
@@ -204,8 +210,6 @@ $(window).scroll(function () {
     var s3 = document.getElementsByClassName("ser_text3");
     var s4 = document.getElementsByClassName("ser_text4");
     t6.staggerTo([s1, s2, s3, s4], 1, { opacity: 1 }, 0.2);
-  } else {
-    t6.pause();
   }
 });
 
@@ -228,14 +232,12 @@ $(window).scroll(function () {
   scrollAni(scTs, "#svg_icon2", vv2);
   scrollAni(scTs, "#svg_icon3", vv3);
 });
-
 function scrollAni(ts, svg, vv) {
   if (ts.scrollTop() > $(svg).offset().top - ts.height()) {
     vv.play();
-  } else {
-    repeat();
   }
 }
+
 // mousemove
 $(document).ready(function () {
   var object1 = $(".heart");
