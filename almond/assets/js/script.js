@@ -60,13 +60,13 @@ $(function () {
   var e1 = document.getElementsByClassName("flower2");
 
   var t2 = new TimelineLite();
-
   t2.staggerTo([e0, e1], 0.6, { ease: Linear.ease, right: -2 + "%" });
 
   var e0 = document.getElementsByClassName("p_al1");
   var e1 = document.getElementsByClassName("p_al2");
   var e2 = document.getElementsByClassName("p_al3");
   var e3 = document.getElementsByClassName("p_al4");
+
   var t4 = new TimelineLite();
   t4.staggerTo(
     [e0, e1, e2, e3],
