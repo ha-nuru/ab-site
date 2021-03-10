@@ -8,6 +8,11 @@ html {
   scroll-behavior: smooth;
   text-transform: capitalize;
 }
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
 h2,
 h3,
 h4,
@@ -39,20 +44,18 @@ img {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .container {
   position: relative;
-  width: 100%;
-  max-width: 83.42%;
+  width: calc(100% - 32px);
+  max-width: 1600px;
   height: 100%;
   margin: 0 auto;
-  padding-top: 50px;
-  box-sizing: border-box;
 }
 #header {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: relative;
   background: url(../img/blue_dia.jpg);
   background-position: top;
@@ -61,22 +64,26 @@ img {
 }
 #header .container {
   position: static;
+  padding-top: 50px;
 }
 .gnb {
   float: right;
 }
 .gnb ul {
-  padding-top: 2.5vw;
+  padding-top: 48px;
 }
 .gnb ul li {
   display: inline-block;
-  padding-left: 3vw;
+  padding-left: 58px;
+}
+.gnb ul li:nth-child(1) {
+  padding-left: 0;
 }
 .gnb ul li a {
   display: block;
   position: relative;
-  color: #ffff;
-  font-size: 1vw;
+  color: #fff;
+  font-size: 1.9rem;
   font-weight: bold;
   text-align: center;
   transition: color 0.5s;
@@ -86,22 +93,22 @@ img {
 }
 .logo {
   display: inline-block;
-  width: 9.8vw;
-  height: 6vw;
+  width: 188px;
+  height: 115px;
   background: url(../img/logo.png) no-repeat;
   background-size: contain;
   position: absolute;
   z-index: 10;
-  left: 13%;
+  left: 247px;
 }
 .leaf {
-  width: 25%;
-  height: 23vw;
+  width: 475px;
+  height: 442px;
   background: url(../img/leaf_alomond1.png) no-repeat;
   background-size: contain;
   position: absolute;
   left: -200px;
-  top: 2vw;
+  top: 39px;
   transform: rotate(10deg);
   opacity: 0;
 }
@@ -117,8 +124,8 @@ img {
 }
 .fruit {
   display: block;
-  width: 23%;
-  height: 11vw;
+  width: 110px;
+  height: 211px;
   position: absolute;
   left: 0;
   top: 18px;
@@ -148,19 +155,19 @@ img {
   }
 }
 .flower1 {
-  width: 23vw;
-  height: 15vw;
+  width: 440px;
+  height: 288px;
   background: url(../img/blossom_f.png) no-repeat;
   background-size: contain;
   position: absolute;
   right: -10%;
-  top: 17vh;
+  top: 160px;
   transform: rotate(-33deg);
   z-index: 10;
 }
 .petal_fir {
-  width: 3vw;
-  height: 4vw;
+  width: 58px;
+  height: 77px;
   background: url(../img/petal.png) no-repeat;
   background-size: cover;
   position: absolute;
@@ -173,8 +180,8 @@ img {
   opacity: 0;
 }
 .petal_sec {
-  width: 3vw;
-  height: 4vw;
+  width: 58px;
+  height: 77px;
   background: url(../img/petal.png) no-repeat;
   background-size: cover;
   position: absolute;
@@ -188,8 +195,8 @@ img {
   opacity: 0;
 }
 .petal_thir {
-  width: 2.1vw;
-  height: 3vw;
+  width: 40px;
+  height: 58px;
   background: url(../img/petal2.png) no-repeat;
   background-size: cover;
   position: absolute;
@@ -207,7 +214,7 @@ img {
   }
   100% {
     left: 59%;
-    top: 4vw;
+    top: 83px;
     transform: rotate3d(8, 3, -4, 67deg);
     opacity: 1;
   }
@@ -240,7 +247,7 @@ img {
   }
 }
 .flower2 {
-  width: 25%;
+  width: 476px;
   height: 380px;
   background: url(../img/blossom_2.png) no-repeat;
   background-size: contain;
@@ -252,7 +259,7 @@ img {
 }
 .font_wrap {
   position: absolute;
-  bottom: 9vw;
+  bottom: 173px;
   left: 15%;
   z-index: 10;
   opacity: 0;
@@ -270,11 +277,11 @@ img {
   z-index: -1;
 } */
 .hbtn {
-  width: 10vw;
-  height: 3vw;
-  margin-top: 2vw;
+  width: 192px;
+  height: 58px;
+  margin-top: 38px;
   color: #0e1b2d;
-  font-size: 0.8vw;
+  font-size: 1.5rem;
   font-weight: bold;
   background: rgba(172, 221, 236, 0.5);
   border: 2px solid #fff;
@@ -290,7 +297,7 @@ img {
   transition: background-color 0.8s ease, color 0.5s ease;
 }
 #header h2 {
-  font-size: 2.6vw;
+  font-size: 5rem;
   font-weight: bold;
   color: #fff;
   margin-bottom: 20px;
@@ -299,15 +306,15 @@ img {
 }
 #header p {
   width: 40%;
-  font-size: 1.1vw;
+  font-size: 2rem;
   color: #fff;
   font-weight: 500;
   line-height: 1.4;
   z-index: 5;
 }
 .prod_breez {
-  width: 30%;
-  height: 32vw;
+  width: 570px;
+  height: 614px;
   background: url(../img/breez_poroduct.png) no-repeat;
   background-size: contain;
   position: absolute;
@@ -414,10 +421,13 @@ img {
 #our_Way,
 #health {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: relative;
   padding: 1vw 0 3vw;
+  background-color: #f1f3f5;
   overflow: hidden;
+}
+#history {
   background: url(../img/op_bg.png);
   background-position: top;
   background-size: contain;
@@ -459,8 +469,8 @@ img {
   position: absolute;
   right: 0;
   top: -29%;
-  width: 11vw;
-  height: 10vw;
+  width: 211px;
+  height: 192px;
   background: url(../img/gren_bg.png) no-repeat;
   background-size: cover;
   z-index: -1;
@@ -471,26 +481,26 @@ img {
   position: absolute;
   right: -10%;
   top: 9%;
-  width: 10vw;
-  height: 10vw;
+  width: 192px;
+  height: 192px;
   background: url(../img/beg_bg.png) no-repeat;
   background-size: cover;
   z-index: -1;
 }
 .hright_text h3 {
-  font-size: 5.5rem;
+  font-size: 5rem;
 }
 .hright_text p {
-  margin-top: 5vh;
-  font-size: 2.5rem;
-  line-height: 1.2;
+  margin-top: 47px;
+  line-height: 1.4;
+  font-size: 2.1rem;
 }
 .pack {
   position: absolute;
   right: 0;
   top: -4%;
-  width: 39vw;
-  height: 31vh;
+  width: 748px;
+  height: 290px;
   background: url(../img/pack.png) no-repeat;
   background-size: cover;
   opacity: 0;
@@ -498,8 +508,8 @@ img {
 .pack .p_al {
   display: block;
   position: absolute;
-  width: 5vh;
-  height: 6vh;
+  width: 47px;
+  height: 56px;
   background: url(../img/almond_1.png) no-repeat;
   background-size: contain;
 }
@@ -531,8 +541,8 @@ img {
   position: absolute;
   top: 6%;
   left: 30%;
-  width: 15vw;
-  height: 24vw;
+  width: 288px;
+  height: 460px;
   background: url(../img/can.png) no-repeat;
   background-size: cover;
   transform: rotate(0);
@@ -543,13 +553,13 @@ img {
   20% {
     transform: rotate(-16deg);
   }
-   80% {
+  80% {
     transform: rotate(15deg);
   }
 }
 .can_bg {
-  width: 28vw;
-  height: 31vw;
+  width: 538px;
+  height: 595px;
   border-radius: 54% 46% 42% 58% / 60% 58% 42% 40%;
   background-image: linear-gradient(to right top, #9fe7ff, #fff 150%);
   animation: wave 5s linear infinite;
@@ -570,8 +580,9 @@ img {
   }
 }
 .tit_cont {
-  font-size: 4.5rem;
+  font-size: 4.6rem;
   text-align: center;
+  color: #029ace;
 }
 #our_Way h3,
 #health h3 {
@@ -581,45 +592,34 @@ img {
   transform: translate(-50%);
   z-index: 2;
   opacity: 0;
-}
-#our_Way h3::after,
-#health h3::after {
-  content: "";
-  display: inline-block;
-  width: 16rem;
-  height: 8rem;
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  transform: translate(-50%);
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='110' viewBox='0 0 220 110'%3E%3Cg id='제외_1' data-name='제외 1' fill='%23029ace'%3E%3Cpath d='M 109.9998016357422 107.2047119140625 L 5.590155601501465 54.99990081787109 L 109.9998016357422 2.795090198516846 L 214.4094543457031 54.99990081787109 L 109.9998016357422 107.2047119140625 Z' stroke='none'/%3E%3Cpath d='M 109.9998016357422 104.4096221923828 L 208.8192443847656 54.99990081787109 L 109.9998016357422 5.590190887451172 L 11.18033790588379 54.99989318847656 L 109.9998016357422 104.4096221923828 M 109.9995651245117 109.9998931884766 L 109.9998016357422 109.9997940063477 L 1.635742137295892e-06 54.99989318847656 L 109.9998016357422 2.470499748596922e-05 L 219.9958343505859 54.99802398681641 L 219.9996032714844 54.99989318847656 L 109.9998016357422 109.9997940063477 L 109.9995651245117 109.9998931884766 Z' stroke='none' fill='%23f8924f'/%3E%3C/g%3E%3C/svg%3E")
-    no-repeat;
-  background-size: cover;
-  z-index: -1;
+  /* color: #0e1b2d;
+    color: #00398d; */
+  color: #029ace;
 }
 .line_bg {
-  width: 0%;
   height: 0.2vw;
   position: absolute;
   top: 45%;
   left: 0;
   transform: translateY(-45%);
-  /* background-color: #029ACE; */
+  box-shadow: 0px 3px 8px #ccc;
   background-color: #fff;
+  /* background: rgba(172, 221, 236, 0.5); */
+  /* background-color: #00398d; */
 }
 .way_wrap {
+  display: flex;
+  justify-content: center;
   position: absolute;
   left: 50%;
   top: 45%;
-  width: 90%;
-  height: auto;
   transform: translate(-50%, -45%);
 }
 .way {
   position: relative;
   float: left;
-  width: 33.333%;
-  height: 20vw;
+  width: 450px;
+  height: 384px;
   background: url(../img/way2.png) no-repeat;
   background-size: contain;
   background-position: center;
@@ -655,67 +655,56 @@ img {
   height: 75%;
 }
 .way_text {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
   position: absolute;
   left: 0;
   top: 0;
-  height: 12vw;
-  margin: 1vw 1.5% 0;
+  height: 230px;
+  margin: 19px 7px 0px 7px;
   background-color: rgba(255, 255, 255, 0.1);
-  padding: 2vw 2vw 1.6vw;
   border: 2px solid #ffff;
   box-sizing: border-box;
   text-align: center;
   opacity: 0;
 }
-.way .way_text2 {
-  padding: 2vw 2vw 3.2vw;
-}
-.way .way_text3 {
-  padding: 2vw 2vw 1.8vw;
-}
 .way_text h4 {
-  font-size: 1.3vw;
+  font-size: 2.5rem;
   color: #0e1b2d;
 }
 .way_text p {
-  font-size: 1vw;
-  margin-top: 1vw;
+  font-size: 1.9rem;
+  margin-top: 12px;
   color: #0e1b2d;
   line-height: 1.5;
   font-weight: 500;
 }
-#health {
-  height: 100vh;
-  width: 100%;
-}
 #layer_w {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 #health .hand {
-  width: 22vw;
-  height: 27vw;
+  width: 456px;
+  height: 518px;
   display: inline-block;
   position: absolute;
-  left: 50%;
-  top: 60%;
-  margin-top: -13vw;
-  margin-left: -6vw;
+  left: 45%;
+  bottom: 0%;
 }
 #health .nutri {
   position: absolute;
   top: 38%;
-  left: 47%;
-  width: 11vw;
+  left: 50%;
+  width: 211px;
 }
 #health .heart {
   position: absolute;
-  left: 70%;
+  position: absolute;
+  left: 75%;
   top: 80%;
-  width: 7vw;
+  width: 135px;
   animation: heart_b 1.5s infinite;
 }
 #health .nutri::after {
@@ -723,8 +712,8 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 11vw;
-  height: 11vw;
+  width: 211px;
+  height: 211px;
   background: url(../img/fruit.png) no-repeat;
   background-size: contain;
   opacity: 0;
@@ -735,8 +724,8 @@ img {
   position: absolute;
   top: 0;
   right: 0;
-  width: 11vw;
-  height: 11vw;
+  width: 211px;
+  height: 211px;
   background: url(../img/milk_B.png) no-repeat;
   background-size: contain;
   opacity: 0;
@@ -745,8 +734,8 @@ img {
 #health .weight {
   position: absolute;
   top: 75%;
-  left: 24%;
-  width: 9vw;
+  left: 30%;
+  width: 173px;
   z-index: 5;
 }
 #health .weight:after {
@@ -754,12 +743,12 @@ img {
   display: inline-block;
   background: url(../img/line.png) no-repeat;
   background-size: contain;
-  width: 0.7vw;
-  height: 1.8vw;
+  width: 14px;
+  height: 35px;
   position: absolute;
   left: 50%;
   top: 13%;
-  margin-left: -0.34vw;
+  margin-left: -7px;
   animation: weig_lin 1s infinite;
   z-index: -1;
 }
@@ -790,7 +779,9 @@ img {
   position: absolute;
   bottom: -2vw;
   left: 50%;
-  font-size: 2.4rem;
+  font-size: 1.2vw;
+  color: #0e1b2d;
+  font-weight: 700;
   white-space: nowrap;
   transform: translateX(-50%);
 }
@@ -803,8 +794,8 @@ img {
 #legacy {
   position: relative;
   width: 100%;
-  height: 320vh;
-  padding: 1vw 0 3vw;
+  height: 3000px;
+  overflow: hidden;
 }
 #legacy h3,
 #service h3 {
@@ -814,23 +805,17 @@ img {
   transform: translateX(-50%);
   opacity: 0;
 }
-.tit_cont1 {
-  color: #029ace;
-  font-size: 4.5rem;
-  text-align: center;
-  z-index: 2;
-}
 .lagacy_sec {
   width: 100%;
-  height: 90vh;
+  height: 964px;
   position: relative;
 }
 .sec1 .left_f {
   position: absolute;
   left: -10%;
-  top: 30vw;
-  width: 36vw;
-  height: 20vw;
+  top: 63%;
+  width: 690px;
+  height: 384px;
   background: url(../img/legacy_1.jpg) no-repeat;
   background-size: cover;
   transform: rotate(-5deg);
@@ -847,8 +832,8 @@ img {
   position: absolute;
   right: -40%;
   top: 17vw;
-  width: 26vw;
-  height: 19vw;
+  width: 500px;
+  height: 365px;
   background: url(../img/blossom_2.png) no-repeat;
   background-size: cover;
   transform: rotate(-180deg);
@@ -858,9 +843,10 @@ img {
   background-image: url(../img/blossom_f.png);
   transform: none;
   top: -6vw;
-  width: 23vw;
-  height: 16vw;
+  width: 480px;
+  height: 346px;
   right: -40%;
+  transform: rotate(-20deg);
   opacity: 0;
 }
 .sec2 .left_f {
@@ -874,8 +860,8 @@ img {
   position: absolute;
   right: -10%;
   top: 30vw;
-  width: 36vw;
-  height: 20vw;
+  width: 691px;
+  height: 384px;
   background: url(../img/legacy_2.png) no-repeat;
   background-size: cover;
   transform: rotate(5deg);
@@ -884,18 +870,19 @@ img {
 .sec2 .left_f > div {
   position: absolute;
   left: -27%;
-  top: -14vw;
-  width: 27vw;
-  height: 20vw;
+  top: -13vw;
+  width: 576px;
+  height: 384px;
   background: url(../img/leaf_alomond1.png) no-repeat;
   background-size: cover;
+  transform: rotateY(360deg);
 }
 .sec3 .left_f {
   position: absolute;
   left: -10%;
   top: 22vw;
-  width: 30vw;
-  height: 30vw;
+  width: 576px;
+  height: 576px;
   background: url(../img/legacy_3.png) no-repeat;
   background-size: cover;
   transform: rotate(-5deg);
@@ -910,29 +897,29 @@ img {
 .sec3 .right_f > div {
   position: absolute;
   right: 0;
-  top: -24vw;
-  width: 11vw;
-  height: 12vw;
+  top: -30vw;
+  width: 211px;
+  height: 230px;
   background: url(../img/float_almond1.png) no-repeat;
   background-size: contain;
   opacity: 0;
 }
 .sec3 .right_f > div:nth-child(2) {
   right: -5vw;
-  top: -11vw;
-  width: 13vw;
-  height: 13vw;
+  top: -18vw;
+  width: 250px;
+  height: 250px;
   background-image: url(../img/float_almond3.png);
 }
 .sec3 .right_f > div:nth-child(3) {
   right: -4vw;
-  top: 3vw;
-  width: 13vw;
-  height: 11vw;
+  top: -2vw;
+  width: 250px;
+  height: 211px;
   background-image: url(../img/float_almond2.png);
 }
 .sec3 .right_f p {
-  top: 16vw;
+  top: 13vw;
   right: -13%;
 }
 .right_f p {
@@ -941,53 +928,53 @@ img {
   right: 0;
   width: 90%;
   color: #029ace;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: 300;
   text-align: right;
   line-height: 1.5;
 }
 .left_f p {
   position: absolute;
-  top: 16vw;
+  top: 13vw;
   left: 0;
   width: 90%;
   color: #029ace;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: 300;
   text-align: left;
   line-height: 1.5;
 }
 .legac_line {
-  width: 3vw;
-  height: 100%;
-  margin: 10vw auto 0;
+  width: 56px;
+  height: 2600px;
   position: absolute;
   left: 50%;
-  margin-left: -1.5vw;
+  top: 250px;
+  margin-left: -28px;
 }
 .dia_svg {
-  width: 5vw;
-  height: 3vw;
-  transform: translateX(-1vw);
+  width: 96px;
+  height: 58px;
+  transform: translateX(-50%);
   position: absolute;
   top: -5vw;
+  left: 50%;
   background: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 24' class='dia_svg'%3E%3Cpath fill-rule='evenodd' d='M22 0l22 12-22 12L0 12' fill='%23029ACE' %3E%3C/path%3E%3C/svg%3E")
     no-repeat;
   opacity: 0;
 }
 .dia_line1 {
-  width: 0.2vw;
+  width: 2px;
   background: #029ace;
   position: absolute;
   left: 50%;
-  top: 0%;
-  margin-left: -0.1vw;
+  top: 0;
+  margin-left: -1px;
 }
 #service {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: relative;
-  padding: 1vw 0 5vw;
   display: flex;
   align-content: space-between;
 }
@@ -998,29 +985,30 @@ img {
 }
 .product_wrap {
   position: relative;
-  top: 15vw;
+  top: 300px;
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: baseline;
 }
 .product_wrap > a {
-  width: 25%;
+  width: 400px;
   display: block;
 }
 .product_wrap a p.ser_text {
   color: #545454;
-  font-size: 1.1vw;
+  font-size: 2.1rem;
   font-weight: 700;
   text-align: center;
-  margin-top: 2.6vw;
+  margin-top: 47px;
   opacity: 0;
 }
 .prod_list {
   width: 100%;
-  height: 16vw;
+  height: 307px;
   background: url(../img/prod_1.png) no-repeat;
-  background-size: contain;
+  background-size: auto;
   background-position: bottom;
   -webkit-filter: grayscale(100%) brightness(90%) sepia(100%)
     hue-rotate(-200deg) saturate(176%) contrast(0.9);
@@ -1053,26 +1041,25 @@ img {
 }
 .product_wrap a:nth-child(2) div {
   width: 100%;
-  height: 10vw;
-  margin-top: 5.8vw;
+  height: 192px;
   background-image: url(../img/prod2.png);
 }
 .product_wrap a:nth-child(3) div {
   width: 100%;
-  height: 16vw;
+  height: 307px;
   background-image: url(../img/prod3.png);
-  background-size: 14vw 14vw;
+  background-size: auto;
 }
 .product_wrap a:nth-child(4) div {
   width: 100%;
-  height: 16vw;
+  height: 308px;
   background-image: url(../img/prod4.png);
-  background-size: 20vw 13vw;
+  background-size: auto;
 }
 #service .hbtn {
   position: absolute;
   left: 50%;
-  top: 42vw;
+  bottom: 50px;
   transform: translateX(-50%);
 }
 #footer {
@@ -1080,24 +1067,21 @@ img {
   height: 15vw;
   background-color: #029ace;
 }
-#footer .container {
-  padding: 60px 0 20px;
-}
 #footer .container::after {
   content: "";
   position: absolute;
   left: 0;
   top: 58%;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background-color: rgba(159, 231, 255, 0.5);
 }
 .fotlogo a {
   position: absolute;
   left: 10vw;
   top: 2.5vw;
-  width: 7vw;
-  height: 4.5vw;
+  width: 134px;
+  height: 86px;
   background: url(../img/logo.png) no-repeat;
   background-size: cover;
   background-position: center;
@@ -1118,8 +1102,8 @@ img {
 }
 .fot_sns a {
   display: inline-block;
-  width: 1.5vw;
-  height: 1.5vw;
+  width: 29px;
+  height: 29px;
   background: url(../img/youtube.png) no-repeat;
   background-size: contain;
   background-position: center;
@@ -1146,7 +1130,7 @@ img {
   margin: 0 31px;
 }
 .fnb li a {
-  font-size: 0.8vw;
+  font-size: 1.5rem;
   color: #9fe7ff;
 }
 .copy_right {
