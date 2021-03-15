@@ -514,6 +514,7 @@
           var targ_img = $(".healt_l");
           $(".blue_btn").click(function (e) {
             e.preventDefault();
+						$('.not_btn_t').hide();
             $(this).parent().siblings(".healt_l").addClass("active");
             targ_img.hide();
             var targ_idx = $(this).index();
