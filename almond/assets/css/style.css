@@ -729,6 +729,9 @@ p {
   animation: weig_lin 1s infinite;
   z-index: -1;
 }
+.not_btn_t {
+  display: none;
+}
 @keyframes weig_lin {
   0% {
     transform: rotate(0);
@@ -1380,6 +1383,9 @@ p {
   }
 }
 @media all and (max-width: 1200px) {
+	#health .healt_l{
+		opacity: 0;
+	}
   #health .nutri {
     width: 163px;
     top: 30%;
@@ -1416,6 +1422,8 @@ p {
     height: 25px;
     width: 25px;
     margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
     border-radius: 50%;
     background: rgba(52, 172, 224, 1);
     box-shadow: 0 0 0 0 rgba(52, 172, 224, 1);
@@ -1653,7 +1661,7 @@ p {
     width: 160px;
   }
   #health .nutri::before {
-	width: 160px;
+    width: 160px;
   }
   #health .nutri::after {
     width: 161px;
@@ -1717,6 +1725,20 @@ p {
   }
   .foot_f {
     display: block;
+  }
+  .not_btn_t {
+    display: block;
+    font-size: 8vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+    color: #ccc;
+    opacity: 0;
+    font-weight: bold;
   }
 }
 @media all and (max-width: 765px) {
@@ -2071,7 +2093,7 @@ p {
     height: 33px;
   }
   #layer_w .healt_l {
-	top: 35%;
+    top: 35%;
   }
 }
 @media all and (max-width: 400px) {

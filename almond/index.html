@@ -322,10 +322,11 @@
         <div class="container">
           <h3 class="tit_cont">Good Health In A Nutshel</h3>
           <div id="layer_w">
+            <p class="not_btn_t">press the button!</p>
             <div class="hand">
-              <button class="blue_btn bbtn1"></button>
-              <button class="blue_btn bbtn2"></button>
-              <button class="blue_btn bbtn3"></button>
+              <div class="blue_btn bbtn1"></div>
+              <div class="blue_btn bbtn2"></div>
+              <div class="blue_btn bbtn3"></div>
               <img src="assets/img/darkimond.png" alt="손 이미지" />
             </div>
             <div class="nutri healt_l">
@@ -469,57 +470,57 @@
     <script src="assets/js/vivus.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script>
-			$(function(){
-      //service slider
-      var my_win = $(window).width();
-      if (my_win <= 1400) {
-        var swiper_prod = new Swiper(".product_wrap", {
-          spaceBetween: 20,
-          centerMode: true,
-          slidesPerView: "auto",
-          loop: false,
-          autoplay: {
-            delay: 3000,
-          },
-          breakpoints: {
-            578: {
-              spaceBetween: 15,
-              centeredSlides: true,
-              slidesPerView: "1",
-              loop: true,
+      $(function () {
+        //service slider
+        var my_win = $(window).width();
+        if (my_win <= 1400) {
+          var swiper_prod = new Swiper(".product_wrap", {
+            spaceBetween: 20,
+            centerMode: true,
+            slidesPerView: "auto",
+            loop: false,
+            autoplay: {
+              delay: 3000,
             },
-            765: {
-              spaceBetween: 10,
-              centeredSlides: true,
-              slidesPerView: "auto",
-              loop: true,
+            breakpoints: {
+              578: {
+                spaceBetween: 15,
+                centeredSlides: true,
+                slidesPerView: "1",
+                loop: true,
+              },
+              765: {
+                spaceBetween: 10,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                loop: true,
+              },
+              900: {
+                spaceBetween: 20,
+                centeredSlides: true,
+                slidesPerView: "2",
+                loop: true,
+              },
+              1400: {
+                spaceBetween: 20,
+                centeredSlides: true,
+                slidesPerView: "3",
+                loop: true,
+              },
             },
-            900: {
-              spaceBetween: 20,
-              centeredSlides: true,
-              slidesPerView: "2",
-              loop: true,
-            },
-            1400: {
-              spaceBetween: 20,
-              centeredSlides: true,
-              slidesPerView: "3",
-              loop: true,
-            },
-          },
-        });
-      }
-      if (my_win <= 570) {
-        var targ_img = $(".healt_l");
-        $(".blue_btn").click(function (e) {
-					e.preventDefault();
-          $(this).parent().siblings(".healt_l").addClass("active");
-          targ_img.hide();
-          var targ_idx = $(this).index();
-          targ_img.eq(targ_idx).show();
-        });
-      }
-		})
+          });
+        }
+        if (my_win <= 570) {
+          var targ_img = $(".healt_l");
+          $(".blue_btn").click(function (e) {
+            e.preventDefault();
+            $(this).parent().siblings(".healt_l").addClass("active");
+            targ_img.hide();
+            var targ_idx = $(this).index();
+            targ_img.eq(targ_idx).show();
+          });
+        }
+      });
     </script>
   </body>
 </html>

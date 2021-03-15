@@ -1,4 +1,22 @@
 $(function () {
+  if (window.location.hash) {
+    $(document).scroll(function () {
+      var hash = window.location.hash;
+      var hashName = hash.substring(1, hash.length);
+      var element;
+
+      if ($(hash).length != 0) {
+        element = $(hash);
+      } else if ($('a[name="' + hashName + '"]').length != 0) {
+        element = $('a[name="' + hashName + '"]:first');
+      }
+
+      if (element != undefined) {
+        window.scrollTo(0, element.position().top);
+      }
+      $(document).unbind("scroll");
+    });
+  }
   var my_win = $(window).width();
   // mousewheel event
   if (my_win > 1180) {
@@ -158,7 +176,7 @@ $(function () {
         top: 122 + "px",
         opacity: 1,
       });
-      if (570 < my_win && my_win <= 940) {
+      if (570 < my_win && my_win <= 1200) {
         t4.to($(".nutri"), 0.5, {
           ease: Linear.ease,
           opacity: 1,
@@ -170,6 +188,11 @@ $(function () {
         t4.to($(".heart"), 0.5, {
           ease: Linear.ease,
           opacity: 1,
+        });
+      } else if (my_win <= 570) {
+        t4.to($(".not_btn_t"), 0.8, {
+          ease: Linear.ease,
+          opacity: 0.4,
         });
       }
     }
