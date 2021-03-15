@@ -4,35 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Almond Breeze</title>
-    <link rel="stylesheet" href="../almond/assets/css/common.css" />
-    <link rel="stylesheet" href="../almond/assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.css" />
     <link rel="stylesheet" href="https://use.typekit.net/ynv7kns.css" />
   </head>
   <body>
     <div id="wrap">
       <header id="header" class="box">
         <div class="container">
-          <a href="#a" class="hide logo">logo</a>
+          <div class="top_head">
+            <a href="#a" class="ir_pm logo">logo</a>
+            <a href="#" class="ham">
+              <img src="./assets/img/ham.png" alt="햄버거 메뉴" />
+            </a>
+          </div>
           <nav class="gnb">
             <ul>
-              <li><a href="">company</a></li>
-              <li><a href="">product</a></li>
-              <li><a href="">information</a></li>
-              <li><a href="">receipe</a></li>
+              <div>
+                <li><a href="">company</a></li>
+                <li><a href="">product</a></li>
+              </div>
+              <div>
+                <li><a href="">information</a></li>
+                <li><a href="">receipe</a></li>
+              </div>
             </ul>
           </nav>
           <div class="leaf">
-            <div class="fruit_st"></div>
-            <div class="fruit"></div>
+            <div class="fruit_st ir_pm">아몬드 열매</div>
+            <div class="fruit ir_pm">움직이는 열매</div>
+            <div class="drop_water">
+              <div class="drop"><h5 class="ir_su">떨어지는 물방울</h5></div>
+              <div class="wave ir_pm">물방울 wave</div>
+            </div>
           </div>
-          <div class="dalmond"></div>
-          <div class="balmond"></div>
-          <div class="flower1"></div>
-          <div class="flower2"></div>
+          <div class="flower1 ir_pm">꽃</div>
+          <div class="flower2 ir_pm">꽃</div>
           <div class="font_wrap">
             <h2>
-              From Our Hearts<br />
-              to Your Hands
+              From Our <br class="mob_br" />Hearts<br />
+              to Your Hands.
             </h2>
             <p>
               All our time and energy goes into creating the highest quality
@@ -40,29 +52,32 @@
             </p>
             <button type="button" class="hbtn">view more</button>
           </div>
-          <div class="drop_water">
-            <div class="drop"></div>
-            <div class="wave"></div>
+          <div class="armond_prod_wrap">
+            <div class="prod_breez">
+              <h5 class="ir_su">아몬드브리즈 상품</h5>
+              <div class="petal petal_fir ir_pm">꽃잎</div>
+              <div class="petal petal_sec ir_pm">꽃잎</div>
+              <div class="petal petal_thir ir_pm">꽃잎</div>
+            </div>
+            <div class="prod_breez_tb ir_pm no_pc">
+              아몬드 브리즈 opacity 이미지
+            </div>
           </div>
-          <div class="prod_breez">
-            <div class="petal_fir"></div>
-            <div class="petal_sec"></div>
-            <div class="petal_thir"></div>
-          </div>
+          <button type="button" class="hbtn mob_only">view more</button>
         </div>
       </header>
       <section id="history" class="box">
-        <h2 class="hide">히스토리</h2>
+        <h2 class="ir_su">히스토리</h2>
         <div class="pack">
-          <div class="p_al1 p_al"></div>
-          <div class="p_al2 p_al"></div>
-          <div class="p_al3 p_al"></div>
-          <div class="p_al4 p_al"></div>
+          <div class="p_al1 p_al ir_pm">떨어지는 아몬드</div>
+          <div class="p_al2 p_al ir_pm">떨어지는 아몬드</div>
+          <div class="p_al3 p_al ir_pm">떨어지는 아몬드</div>
+          <div class="p_al4 p_al ir_pm">떨어지는 아몬드</div>
         </div>
         <div class="container">
           <div class="hleft">
-            <div class="almond_can"></div>
-            <div class="can_bg"></div>
+            <div class="almond_can ir_pm">아몬드 캔</div>
+            <div class="can_bg ir_pm">움직이는 캔 배경</div>
           </div>
           <div class="hright_text">
             <h3>how we've grown</h3>
@@ -76,13 +91,14 @@
         </div>
       </section>
       <section id="our_Way" class="box">
-        <h2 class="hide">아몬드브리즈 이념</h2>
-        <div class="line_bg"></div>
+        <h2 class="ir_su">아몬드브리즈 이념</h2>
+        <div class="line_bg ir_pm">가로지르는 선</div>
         <div class="container">
           <h3 class="tit_cont">The Blue Diamond Way</h3>
           <div class="way_wrap clear">
             <div class="way_fir way">
-              <div class="rond_svg">
+              <div class="rond_svg ir_pm">
+                svg 이미지
                 <svg
                   viewBox="0 0 90.34 90.26"
                   id="svg_icon1"
@@ -173,7 +189,8 @@
               </div>
             </div>
             <div class="way_sec way">
-              <div class="rond_svg">
+              <div class="rond_svg ir_pm">
+                svg 이미지
                 <svg
                   id="svg_icon2"
                   class="op_svg"
@@ -219,7 +236,8 @@
               </div>
             </div>
             <div class="way_thr way">
-              <div class="rond_svg">
+              <div class="rond_svg ir_pm">
+                svg 이미지
                 <svg
                   viewBox="0 0 74 97.99"
                   id="svg_icon3"
@@ -300,44 +318,50 @@
         </div>
       </section>
       <section id="health" class="box">
-        <h2 class="hide">아몬드 효능</h2>
+        <h2 class="ir_su">아몬드 효능</h2>
         <div class="container">
           <h3 class="tit_cont">Good Health In A Nutshel</h3>
           <div id="layer_w">
             <div class="hand">
-              <img src="assets/img/darkimond.png" alt="손" />
+              <button class="blue_btn bbtn1"></button>
+              <button class="blue_btn bbtn2"></button>
+              <button class="blue_btn bbtn3"></button>
+              <img src="assets/img/darkimond.png" alt="손 이미지" />
             </div>
             <div class="nutri healt_l">
-              <img src="assets/img/picnic-basket.png" alt="" />
+              <img
+                src="assets/img/picnic-basket.png"
+                alt="과일 바구니 이미지"
+              />
               <p>Get Your Nutrients</p>
             </div>
             <div class="heart healt_l">
-              <img src="assets/img/heart.png" alt="" />
+              <img src="assets/img/heart.png" alt="심장 이미지" />
               <p>help your heart</p>
             </div>
             <div class="weight healt_l">
-              <img src="assets/img/weight.png" alt="" />
+              <img src="assets/img/weight.png" alt="체중계 이미지" />
               <p>Manage Your Weight</p>
             </div>
           </div>
         </div>
       </section>
       <section id="legacy" class="trigger_D">
-        <h5 id="trigger1" class="hide">scroll trigger</h5>
-        <h2 class="hide">아몬드 Quality</h2>
+        <h5 id="trigger1" class="ir_su">scroll trigger</h5>
+        <h2 class="ir_su">아몬드 Quality</h2>
         <h3 class="tit_cont">Almond Quality Is Our Legacy</h3>
         <div class="container">
           <div class="legac_line">
             <div class="dia_line1">
-              <div class="dia_svg"></div>
+              <div class="dia_svg ir_pm">blue dia svg</div>
             </div>
           </div>
           <div class="box"></div>
           <div class="sec1 lagacy_sec">
-            <div class="left_f"></div>
+            <div class="left_f ir_pm">농부 이미지</div>
             <div class="right_f">
-              <div></div>
-              <div></div>
+              <div class="ir_pm">꽃 이미지</div>
+              <div class="ir_pm">꽃 이미지</div>
               <p>
                 It’s the fruit of commitment to a craft, and care woven into
                 every step of the process. It’s a beautiful reward for countless
@@ -347,21 +371,21 @@
           </div>
           <div class="sec2 lagacy_sec">
             <div class="left_f">
-              <div></div>
+              <div class="ir_pm">아몬드 열매 이미지</div>
               <p>
                 And as a co-op of more than 3,000 growers, with one guiding
                 goal, to bring the benefits of almonds to the world, we’ve been
                 pioneering how almonds are enjoyed for over 100 years.
               </p>
             </div>
-            <div class="right_f"></div>
+            <div class="right_f ir_pm">수확 이미지</div>
           </div>
           <div class="sec3 lagacy_sec">
-            <div class="left_f"></div>
+            <div class="left_f ir_pm">아몬드브리즈 제품 이미지</div>
             <div class="right_f">
-              <div></div>
-              <div></div>
-              <div></div>
+              <div class="ir_pm">아몬드 이미지</div>
+              <div class="ir_pm">아몬드 이미지</div>
+              <div class="ir_pm">아몬드 이미지</div>
               <p>
                 Our diverse line of products are a measure of care and
                 consistency, nurtured by the hands and minds of generations of
@@ -373,33 +397,43 @@
         </div>
       </section>
       <section id="service">
-        <h2 class="hide">아몬드 브리즈 제품</h2>
+        <h2 class="ir_su">아몬드 브리즈 제품</h2>
         <div class="container">
           <h3 class="tit_cont">Our Product</h3>
-          <div class="product_wrap">
-            <a href="#a">
-              <div class="prod_list prod_list1"></div>
-              <p class="ser_text ser_text1">Armond breez㉿</p>
-            </a>
-            <a href="#a">
-              <div class="prod_list prod_list2"></div>
-              <p class="ser_text ser_text2">classic snack almonds</p>
-            </a>
-            <a href="#a">
-              <div class="prod_list prod_list3"></div>
-              <p class="ser_text ser_text3">baking ingridients</p>
-            </a>
-            <a href="#a">
-              <div class="prod_list prod_list4"></div>
-              <p class="ser_text ser_text4">nut-thins㉿</p>
-            </a>
+          <div class="product_wrap swiper-container">
+            <div class="swiper-wrapper product_cont">
+              <a href="#a" class="swiper-slide">
+                <div class="prod_list prod_list1 ir_pm">
+                  아몬드 브리즈 제품 이미지
+                </div>
+                <p class="ser_text ser_text1">Armond breez㉿</p>
+              </a>
+              <a href="#a" class="swiper-slide">
+                <div class="prod_list prod_list2 ir_pm">
+                  아몬드 브리즈 제품 이미지
+                </div>
+                <p class="ser_text ser_text2">classic snack almonds</p>
+              </a>
+              <a href="#a" class="swiper-slide">
+                <div class="prod_list prod_list3 ir_pm">
+                  아몬드 브리즈 제품 이미지
+                </div>
+                <p class="ser_text ser_text3">baking ingridients</p>
+              </a>
+              <a href="#a" class="swiper-slide">
+                <div class="prod_list prod_list4 ir_pm">
+                  아몬드 브리즈 제품 이미지
+                </div>
+                <p class="ser_text ser_text4">nut-thins㉿</p>
+              </a>
+            </div>
           </div>
           <button type="button" class="hbtn">view more</button>
         </div>
       </section>
       <footer id="footer">
-        <div class="container">
-          <div class="fotlogo"><a href="#a"></a></div>
+        <div class="footer_w">
+          <div class="fotlogo ir_pm"><a href="#a">footer logo 이미지</a></div>
           <ul class="fnb">
             <li><a href="#a">Product</a></li>
             <li><a href="#a">Informaition</a></li>
@@ -408,14 +442,17 @@
             <li><a href="#a">Press</a></li>
             <li><a href="#a">Contact</a></li>
           </ul>
+        </div>
+        <div class="ir_pm foot_line">footer 라인</div>
+        <div class="foot_f">
           <p class="copy_right">
             ⓒ2020 almond breeze Company.all rights reserved
           </p>
           <ul class="fot_sns">
-            <li><a href="#a"></a></li>
-            <li><a href="#a"></a></li>
-            <li><a href="#a"></a></li>
-            <li><a href="#a"></a></li>
+            <li class="ir_pm"><a href="#a">youtube</a></li>
+            <li class="ir_pm"><a href="#a">insta</a></li>
+            <li class="ir_pm"><a href="#a">facebook</a></li>
+            <li class="ir_pm"><a href="#a">twitter</a></li>
           </ul>
         </div>
       </footer>
@@ -428,7 +465,61 @@
     <script src="assets/js/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
     <script src="assets/js/vivus.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+			$(function(){
+      //service slider
+      var my_win = $(window).width();
+      if (my_win <= 1400) {
+        var swiper_prod = new Swiper(".product_wrap", {
+          spaceBetween: 20,
+          centerMode: true,
+          slidesPerView: "auto",
+          loop: false,
+          autoplay: {
+            delay: 3000,
+          },
+          breakpoints: {
+            578: {
+              spaceBetween: 15,
+              centeredSlides: true,
+              slidesPerView: "1",
+              loop: true,
+            },
+            765: {
+              spaceBetween: 10,
+              centeredSlides: true,
+              slidesPerView: "auto",
+              loop: true,
+            },
+            900: {
+              spaceBetween: 20,
+              centeredSlides: true,
+              slidesPerView: "2",
+              loop: true,
+            },
+            1400: {
+              spaceBetween: 20,
+              centeredSlides: true,
+              slidesPerView: "3",
+              loop: true,
+            },
+          },
+        });
+      }
+      if (my_win <= 570) {
+        var targ_img = $(".healt_l");
+        $(".blue_btn").click(function (e) {
+					e.preventDefault();
+          $(this).parent().siblings(".healt_l").addClass("active");
+          targ_img.hide();
+          var targ_idx = $(this).index();
+          targ_img.eq(targ_idx).show();
+        });
+      }
+		})
+    </script>
   </body>
 </html>

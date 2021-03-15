@@ -1,12 +1,7 @@
 /* reset */
-* {
-  margin: 0;
-  padding: 0;
-}
 html {
   font-size: 0.625em;
   scroll-behavior: smooth;
-  text-transform: capitalize;
 }
 html,
 body {
@@ -19,25 +14,17 @@ h4,
 p {
   color: #fff;
 }
-li {
-  list-style: none;
+.no_pc {
+  display: none;
 }
-img {
-  width: 100%;
+.ham {
+  display: none;
 }
-.hide {
-  overflow: hidden;
-  position: absolute;
-  width: 0;
-  height: 0;
-  line-height: 0;
-  text-indent: -9999px;
+.mob_br {
+  display: none;
 }
-.clear::after,
-.clear::before {
-  content: "";
-  display: block;
-  clear: both;
+.mob_only {
+  display: none;
 }
 /* layout */
 #wrap {
@@ -48,7 +35,7 @@ img {
 }
 .container {
   position: relative;
-  width: calc(100% - 32px);
+  width: calc(100% - 50px);
   max-width: 1600px;
   height: 100%;
   margin: 0 auto;
@@ -58,8 +45,8 @@ img {
   height: 100%;
   position: relative;
   background: url(../img/blue_dia.jpg);
-  background-position: top;
-  background-size: contain;
+  background-position: top center;
+  background-size: 1000px;
   overflow: hidden;
 }
 #header .container {
@@ -68,13 +55,23 @@ img {
 }
 .gnb {
   float: right;
+  width: 50%;
 }
-.gnb ul {
+.gnb {
+  width: 100%;
+}
+.gnb > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding-top: 48px;
 }
-.gnb ul li {
+.gnb > ul {
+  justify-content: space-evenly;
+}
+.gnb > ul li {
   display: inline-block;
-  padding-left: 58px;
+  padding-left: 48px;
 }
 .gnb ul li:nth-child(1) {
   padding-left: 0;
@@ -96,10 +93,16 @@ img {
   width: 188px;
   height: 115px;
   background: url(../img/logo.png) no-repeat;
-  background-size: contain;
+  background-size: 100%;
   position: absolute;
   z-index: 10;
   left: 247px;
+}
+.logo {
+  width: 150px;
+  height: 92px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .leaf {
   width: 475px;
@@ -253,29 +256,17 @@ img {
   background-size: contain;
   position: absolute;
   right: -24%;
-  bottom: 40px;
+  top: 500px;
   transform: rotate(176deg);
   z-index: 30;
 }
 .font_wrap {
   position: absolute;
-  bottom: 173px;
+  top: 500px;
   left: 15%;
   z-index: 10;
   opacity: 0;
 }
-/* .font_wrap::after {
-  content: "";
-  display: block;
-  width: 33%;
-  height: 310px;
-  background: url(../img/font-deco.png) no-repeat;
-  background-size: contain;
-  position: absolute;
-  left: -15%;
-  top: -35px;
-  z-index: -1;
-} */
 .hbtn {
   width: 192px;
   height: 58px;
@@ -289,8 +280,6 @@ img {
   transition: background-color 0.8s ease, color 0.5s ease;
 }
 .hbtn:hover {
-  width: 10vw;
-  height: 3vw;
   border: none;
   background-color: #0e1b2d;
   color: #fff;
@@ -319,27 +308,28 @@ img {
   background-size: contain;
   position: absolute;
   right: 18%;
-  bottom: 50px;
+  top: 280px;
   opacity: 0;
 }
 .drop_water {
   display: block;
   position: absolute;
-  left: -14%;
-  top: 66%;
-  width: 40%;
-  height: 26vw;
+  top: 400px;
+  left: 46%;
+  transform: rotate(-10deg) translateX(-50%);
+  width: 100%;
+  height: 700px;
   opacity: 0;
 }
 .drop_water > div {
-  margin: 14.5vw auto;
+  margin: 400px auto 0;
 }
 .drop_water .drop {
   position: relative;
   width: 20px;
   height: 20px;
-  top: -50%;
-  left: -2%;
+  top: -10%;
+  left: 0;
   margin: 0 auto;
   background: #f2e5cd;
   border-radius: 20px;
@@ -400,7 +390,7 @@ img {
 }
 @keyframes drip {
   to {
-    top: 190px;
+    top: 60%;
   }
 }
 @keyframes ripple_2 {
@@ -423,26 +413,17 @@ img {
   width: 100%;
   height: 100%;
   position: relative;
-  padding: 1vw 0 3vw;
   background-color: #f1f3f5;
   overflow: hidden;
 }
 #history {
   background: url(../img/op_bg.png);
-  background-position: top;
-  background-size: contain;
-}
-#history .container {
-  position: relative;
-  width: 100%;
-  max-width: 83.42%;
-  height: 100%;
-  margin: 0 auto;
-  padding-top: 50px;
-  box-sizing: border-box;
+  background-position: top center;
+  background-size: 1000px;
+  min-height: 750px;
 }
 .hright_text {
-  width: 45%;
+  width: 50%;
   display: inline-block;
   position: absolute;
   right: -50%;
@@ -498,8 +479,8 @@ img {
 .pack {
   position: absolute;
   right: 0;
-  top: -4%;
-  width: 748px;
+  top: -20%;
+  width: 700px;
   height: 290px;
   background: url(../img/pack.png) no-repeat;
   background-size: cover;
@@ -515,33 +496,31 @@ img {
 }
 .pack .p_al1 {
   left: 25%;
-  top: 10vw;
+  top: 192px;
 }
 .pack .p_al2 {
   left: 10%;
-  top: 9vw;
+  top: 172px;
 }
 .pack .p_al3 {
   left: 50%;
-  top: 12vw;
+  top: 230px;
 }
 .pack .p_al4 {
   left: 60%;
-  top: 13vw;
+  top: 250px;
 }
 .hleft {
   position: absolute;
   left: -60%;
   top: 24%;
-  width: 30%;
-  height: 52%;
   opacity: 0;
 }
 .almond_can {
   position: absolute;
   top: 6%;
   left: 30%;
-  width: 288px;
+  width: 292px;
   height: 460px;
   background: url(../img/can.png) no-repeat;
   background-size: cover;
@@ -585,35 +564,34 @@ img {
   color: #029ace;
 }
 #our_Way h3,
-#health h3 {
+#health h3,
+#legacy h3 {
+  width: 100%;
   position: absolute;
   left: 50%;
-  top: -10vh;
+  top: -150px;
   transform: translate(-50%);
-  z-index: 2;
-  opacity: 0;
-  /* color: #0e1b2d;
-    color: #00398d; */
   color: #029ace;
+  line-height: 1.2;
+  opacity: 0;
+  z-index: 2;
 }
 .line_bg {
-  height: 0.2vw;
+  height: 2px;
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 0;
-  transform: translateY(-45%);
+  transform: translateY(-50%);
   box-shadow: 0px 3px 8px #ccc;
   background-color: #fff;
-  /* background: rgba(172, 221, 236, 0.5); */
-  /* background-color: #00398d; */
 }
 .way_wrap {
   display: flex;
   justify-content: center;
   position: absolute;
   left: 50%;
-  top: 45%;
-  transform: translate(-50%, -45%);
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .way {
   position: relative;
@@ -701,10 +679,9 @@ img {
 }
 #health .heart {
   position: absolute;
-  position: absolute;
   left: 75%;
   top: 80%;
-  width: 135px;
+  width: 125px;
   animation: heart_b 1.5s infinite;
 }
 #health .nutri::after {
@@ -713,7 +690,7 @@ img {
   top: 0;
   left: 0;
   width: 211px;
-  height: 211px;
+  height: 100%;
   background: url(../img/fruit.png) no-repeat;
   background-size: contain;
   opacity: 0;
@@ -725,7 +702,7 @@ img {
   top: 0;
   right: 0;
   width: 211px;
-  height: 211px;
+  height: 100%;
   background: url(../img/milk_B.png) no-repeat;
   background-size: contain;
   opacity: 0;
@@ -757,29 +734,23 @@ img {
     transform: rotate(0);
   }
   40% {
-    transform: rotate(-45deg);
-    left: 50%;
-    top: 13%;
-    margin-left: -0.36vw;
+    transform: rotate(-25deg);
   }
   80% {
-    transform: rotate(45deg);
-    left: 50%;
-    top: 13%;
-    margin-left: -0.33vw;
+    transform: rotate(25deg);
   }
 }
 @keyframes heart_b {
   90% {
-    width: 8vw;
+    width: 135px;
   }
 }
 .healt_l p {
   display: inline-block;
   position: absolute;
-  bottom: -2vw;
+  bottom: -39px;
   left: 50%;
-  font-size: 1.2vw;
+  font-size: 2.3rem;
   color: #0e1b2d;
   font-weight: 700;
   white-space: nowrap;
@@ -797,17 +768,9 @@ img {
   height: 3000px;
   overflow: hidden;
 }
-#legacy h3,
-#service h3 {
-  position: absolute;
-  left: 50%;
-  top: -16vh;
-  transform: translateX(-50%);
-  opacity: 0;
-}
 .lagacy_sec {
   width: 100%;
-  height: 964px;
+  height: 35%;
   position: relative;
 }
 .sec1 .left_f {
@@ -823,15 +786,16 @@ img {
 }
 .sec1 .right_f {
   position: absolute;
+  top: 60%;
   right: -10%;
-  top: 30vw;
   width: 50%;
+  height: 100%;
   opacity: 0;
 }
 .sec1 .right_f > div {
   position: absolute;
   right: -40%;
-  top: 17vw;
+  top: 28%;
   width: 500px;
   height: 365px;
   background: url(../img/blossom_2.png) no-repeat;
@@ -842,7 +806,7 @@ img {
 .sec1 .right_f > div:nth-child(2) {
   background-image: url(../img/blossom_f.png);
   transform: none;
-  top: -6vw;
+  top: -10%;
   width: 480px;
   height: 346px;
   right: -40%;
@@ -852,14 +816,15 @@ img {
 .sec2 .left_f {
   position: absolute;
   left: -10%;
-  top: 30vw;
+  top: 44%;
   width: 50%;
   opacity: 0;
+  height: 100%;
 }
 .sec2 .right_f {
   position: absolute;
   right: -10%;
-  top: 30vw;
+  top: 42%;
   width: 691px;
   height: 384px;
   background: url(../img/legacy_2.png) no-repeat;
@@ -870,7 +835,7 @@ img {
 .sec2 .left_f > div {
   position: absolute;
   left: -27%;
-  top: -13vw;
+  top: -22%;
   width: 576px;
   height: 384px;
   background: url(../img/leaf_alomond1.png) no-repeat;
@@ -880,7 +845,7 @@ img {
 .sec3 .left_f {
   position: absolute;
   left: -10%;
-  top: 22vw;
+  top: 9%;
   width: 576px;
   height: 576px;
   background: url(../img/legacy_3.png) no-repeat;
@@ -891,13 +856,14 @@ img {
 .sec3 .right_f {
   position: absolute;
   right: 0%;
-  top: 30vw;
+  top: 33%;
   width: 50%;
+  height: 100%;
 }
 .sec3 .right_f > div {
   position: absolute;
   right: 0;
-  top: -30vw;
+  top: -52%;
   width: 211px;
   height: 230px;
   background: url(../img/float_almond1.png) no-repeat;
@@ -905,26 +871,27 @@ img {
   opacity: 0;
 }
 .sec3 .right_f > div:nth-child(2) {
-  right: -5vw;
-  top: -18vw;
+  right: -9%;
+  top: -30%;
   width: 250px;
   height: 250px;
   background-image: url(../img/float_almond3.png);
 }
 .sec3 .right_f > div:nth-child(3) {
-  right: -4vw;
-  top: -2vw;
+  right: -5%;
+  top: -5%;
   width: 250px;
   height: 211px;
   background-image: url(../img/float_almond2.png);
 }
 .sec3 .right_f p {
-  top: 13vw;
+  top: 18%;
   right: -13%;
+  opacity: 0;
 }
 .right_f p {
   position: absolute;
-  top: 16vw;
+  top: 27%;
   right: 0;
   width: 90%;
   color: #029ace;
@@ -935,7 +902,7 @@ img {
 }
 .left_f p {
   position: absolute;
-  top: 13vw;
+  top: 20%;
   left: 0;
   width: 90%;
   color: #029ace;
@@ -946,7 +913,7 @@ img {
 }
 .legac_line {
   width: 56px;
-  height: 2600px;
+  height: 90%;
   position: absolute;
   left: 50%;
   top: 250px;
@@ -957,7 +924,7 @@ img {
   height: 58px;
   transform: translateX(-50%);
   position: absolute;
-  top: -5vw;
+  top: -100px;
   left: 50%;
   background: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 24' class='dia_svg'%3E%3Cpath fill-rule='evenodd' d='M22 0l22 12-22 12L0 12' fill='%23029ACE' %3E%3C/path%3E%3C/svg%3E")
     no-repeat;
@@ -975,25 +942,20 @@ img {
   width: 100%;
   height: 100%;
   position: relative;
-  display: flex;
-  align-content: space-between;
+  overflow: hidden;
 }
 #service h3 {
   position: relative;
   text-align: center;
-  top: -16vh;
+  top: -169px;
 }
 .product_wrap {
   position: relative;
-  top: 300px;
-  width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: baseline;
+  top: 250px;
 }
-.product_wrap > a {
+.product_wrap a {
   width: 400px;
+  height: auto;
   display: block;
 }
 .product_wrap a p.ser_text {
@@ -1004,10 +966,13 @@ img {
   margin-top: 47px;
   opacity: 0;
 }
+.product_cont {
+  align-items: flex-end;
+}
 .prod_list {
   width: 100%;
   height: 307px;
-  background: url(../img/prod_1.png) no-repeat;
+  background-repeat: no-repeat;
   background-size: auto;
   background-position: bottom;
   -webkit-filter: grayscale(100%) brightness(90%) sepia(100%)
@@ -1039,18 +1004,21 @@ img {
 .prod_list:hover {
   filter: none;
 }
-.product_wrap a:nth-child(2) div {
+.product_wrap .prod_list1 {
+  background-image: url(../img/prod_1.png);
+}
+.product_wrap .prod_list2 {
   width: 100%;
   height: 192px;
   background-image: url(../img/prod2.png);
 }
-.product_wrap a:nth-child(3) div {
+.product_wrap .prod_list3 {
   width: 100%;
   height: 307px;
   background-image: url(../img/prod3.png);
   background-size: auto;
 }
-.product_wrap a:nth-child(4) div {
+.product_wrap .prod_list4 {
   width: 100%;
   height: 308px;
   background-image: url(../img/prod4.png);
@@ -1064,41 +1032,46 @@ img {
 }
 #footer {
   width: 100%;
-  height: 15vw;
+  overflow: hidden;
   background-color: #029ace;
 }
-#footer .container::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 58%;
+.footer_w {
+  width: 1600px;
+  max-width: calc(100% - 50px);
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+}
+.foot_line {
   width: 100%;
   height: 2px;
   background-color: rgba(159, 231, 255, 0.5);
 }
 .fotlogo a {
-  position: absolute;
-  left: 10vw;
-  top: 2.5vw;
   width: 134px;
   height: 86px;
   background: url(../img/logo.png) no-repeat;
   background-size: cover;
   background-position: center;
+  display: block;
 }
 .fot_sns {
-  position: absolute;
-  display: flex;
+  display: inline-flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   position: absolute;
   right: 0;
-  bottom: 2.5vw;
 }
 .fot_sns li {
   display: flex;
   align-items: center;
-  margin: 0 0.5vw;
+  margin-left: 25px;
+}
+.fot_sns li:nth-child(1) {
+  margin-left: 0;
 }
 .fot_sns a {
   display: inline-block;
@@ -1121,23 +1094,1121 @@ img {
   background-size: contain;
 }
 .fnb {
-  position: absolute;
-  top: 4.4vw;
-  right: 6%;
+  margin-left: auto;
+  display: flex;
 }
 .fnb li {
   float: left;
-  margin: 0 31px;
+  margin-left: 50px;
+}
+.fnb li:nth-child(1) {
+  margin-left: 0;
 }
 .fnb li a {
   font-size: 1.5rem;
   color: #9fe7ff;
 }
 .copy_right {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 2.5vw;
   color: rgba(159, 231, 255, 0.5);
-  font-size: 0.9vw;
+  font-size: 1.7rem;
+  text-align: center;
+  padding: 30px 0;
+  width: 100%;
+  display: inline-block;
+}
+.foot_f {
+  display: flex;
+  width: 1600px;
+  max-width: calc(100% - 32px);
+  margin: 0 auto;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+@media all and (max-width: 1650px) {
+  .font_wrap {
+    left: 11%;
+  }
+  .prod_breez {
+    right: 12%;
+  }
+  .prod_breez_tb .flower1 {
+    width: 370px;
+    height: 270px;
+  }
+  .leaf {
+    width: 450px;
+    height: 340px;
+  }
+  .flower1 {
+    width: 380px;
+    height: 288px;
+  }
+  .drop_water {
+    top: 350px;
+  }
+}
+
+@media all and (max-width: 1400px) {
+  .swiper-container {
+    width: 100%;
+    height: auto;
+  }
+  .swiper-slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .no_pc {
+    display: block;
+  }
+  .prod_breez {
+    background-image: url(../img/tb_almond_bre2.png);
+    width: 220px;
+    height: 497px;
+    transform: rotate(-15deg) translateY(-50%);
+    right: 20%;
+    bottom: auto;
+    top: 50%;
+  }
+  .prod_breez_tb {
+    width: 178px;
+    height: 402px;
+    background: url(../img/tb_almond_bre2.png) no-repeat;
+    background-size: contain;
+    transform: rotate(20deg);
+    opacity: 0;
+    position: absolute;
+    right: 12%;
+    top: 15%;
+    z-index: -1;
+  }
+  .armond_prod_wrap {
+    position: relative;
+    right: 0;
+    /* top: 50%; */
+    transform: translateY(-50%);
+    width: 100%;
+    height: 80%;
+  }
+  .petal {
+    display: none;
+  }
+  .flower1 {
+    display: none;
+  }
+  #header h2 {
+    font-size: 4.4rem;
+    margin-bottom: 10px;
+  }
+  #header p {
+    font-size: 1.6rem;
+  }
+  .pack {
+    width: 600px;
+    height: 280px;
+  }
+  .pack .p_al {
+    width: 38px;
+    height: 45px;
+  }
+  .almond_can {
+    width: 239px;
+    height: 380px;
+  }
+  .can_bg {
+    width: 445px;
+    height: 505px;
+  }
+  .hright_text::before {
+    width: 180px;
+    height: 170px;
+  }
+  .hright_text::after {
+    width: 147px;
+    height: 120px;
+    right: -6%;
+    top: 14%;
+  }
+  .hright_text h3 {
+    font-size: 4.2rem;
+  }
+  .hright_text p {
+    margin-top: 35px;
+    font-size: 1.6rem;
+  }
+  .hbtn {
+    margin-top: 22px;
+    font-size: 1.3rem;
+    width: 165px;
+    height: 48px;
+  }
+  .way {
+    width: 350px;
+    height: 300px;
+  }
+  .way_text {
+    height: 180px;
+  }
+  .way_text h4 {
+    font-size: 2.1rem;
+  }
+  .way_text p {
+    font-size: 1.6rem;
+  }
+  .tit_cont {
+    font-size: 4.2rem;
+  }
+  .flower2 {
+    width: 400px;
+    height: 289px;
+  }
+  .leaf {
+    width: 400px;
+    height: 298px;
+  }
+  .drop_water {
+    left: 50%;
+  }
+  #health .nutri {
+    width: 184px;
+    top: 43%;
+  }
+  #health .nutri::before {
+    width: 189px;
+  }
+  #health .nutri::after {
+    width: 184px;
+  }
+  .healt_l p {
+    font-size: 2rem;
+    bottom: -30px;
+  }
+  #health .heart {
+    width: 115px;
+  }
+  #health .hand {
+    width: 360px;
+    height: 482px;
+  }
+  @keyframes heart_b {
+    90% {
+      width: 125px;
+    }
+  }
+  #health .weight {
+    width: 150px;
+  }
+  #health .weight:after {
+    width: 11px;
+    height: 22px;
+    margin-left: -5.5px;
+  }
+  .sec1 .left_f {
+    width: 618px;
+    height: 352px;
+    top: 45%;
+    left: 10%;
+    transform: rotate(-5deg) translateX(-50%);
+  }
+  .sec1 .right_f {
+    top: 26%;
+  }
+  .sec1 .right_f > div:nth-child(2) {
+    display: none;
+    width: 442px;
+    right: -40%;
+    top: 13%;
+    height: 309px;
+  }
+  .sec1 .right_f > div {
+    top: 62%;
+    width: 469px;
+    height: 339px;
+  }
+  .right_f p {
+    top: 53%;
+    font-size: 2rem;
+  }
+  .sec2 .right_f {
+    width: 618px;
+    height: 352px;
+    transform: rotate(5deg) translateX(50%);
+    top: 19%;
+  }
+  .sec2 .left_f {
+    top: 66%;
+    width: 80%;
+  }
+  .sec2 .left_f > div {
+    top: 2%;
+    width: 444px;
+    height: 274px;
+    background-image: url(../img/leaf_alomond2.png);
+  }
+  .left_f p {
+    top: -13%;
+    font-size: 2rem;
+  }
+  #legacy {
+    height: 100%;
+    min-height: 3500px;
+  }
+  .sec3 .left_f {
+    width: 525px;
+    height: 503px;
+    transform: rotate(-5deg) translateX(-50%);
+    top: 1%;
+  }
+  .sec3 .right_f p {
+    top: 15%;
+  }
+  .legac_line {
+    opacity: 0.4;
+  }
+  .sec3 .right_f {
+    width: 80%;
+  }
+}
+@media all and (max-width: 1200px) {
+  #health .nutri {
+    width: 163px;
+    top: 30%;
+    transform: translateX(-50%);
+  }
+  #health .heart {
+    width: 115px;
+    top: 55%;
+    left: 75%;
+  }
+  #health .weight {
+    width: 140px;
+    left: 10%;
+    top: 55%;
+  }
+  #health .hand {
+    width: 360px;
+    height: 482px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15%;
+  }
+  #health .nutri::after {
+    width: 166px;
+  }
+  #health .nutri::before {
+    width: 166px;
+  }
+  .fnb li {
+    margin-left: 35px;
+  }
+  .blue_btn {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    margin: 10px;
+    border-radius: 50%;
+    background: rgba(52, 172, 224, 1);
+    box-shadow: 0 0 0 0 rgba(52, 172, 224, 1);
+    animation: pulse-blue 2s infinite;
+    transform: scale(1);
+  }
+  @keyframes pulse-blue {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(52, 172, 224, 0.7);
+    }
+
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(52, 172, 224, 0);
+    }
+
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(52, 172, 224, 0);
+    }
+  }
+  .bbtn1 {
+    left: 30%;
+    top: 24%;
+  }
+  .bbtn2 {
+    left: 60%;
+    top: 27%;
+  }
+  .bbtn3 {
+    left: 50%;
+    top: 50%;
+  }
+}
+@media all and (max-width: 1180px) {
+  .ham {
+    display: inline-block;
+    width: 30px;
+    position: absolute;
+  }
+  .gnb {
+    display: none;
+  }
+  .top_head {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    top: 20px;
+  }
+  .logo {
+    width: 130px;
+    height: 80px;
+  }
+  .armond_prod_wrap {
+    right: -4%;
+  }
+  .font_wrap {
+    left: 9%;
+  }
+}
+@media all and (max-width: 1027px) {
+  .hleft {
+    transform: translate(-50%, -50%);
+    width: 208px;
+    left: 50%;
+    top: 46%;
+    height: 333px;
+  }
+  .almond_can {
+    left: auto;
+    top: auto;
+    height: 100%;
+    width: 100%;
+  }
+  .hright_text {
+    top: auto;
+    text-align: center;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -50%;
+  }
+  .can_bg {
+    display: none;
+  }
+  .hright_text {
+    width: 70%;
+  }
+  .hright_text h3 {
+    font-size: 3.5rem;
+  }
+  .hright_text p {
+    margin-top: 20px;
+    font-size: 1.4rem;
+  }
+  .pack {
+    height: 248px;
+  }
+  .tit_cont {
+    font-size: 3.6rem;
+  }
+  .way {
+    width: 30vw;
+    height: 25vw;
+  }
+  .way_text {
+    height: 150px;
+  }
+  .way_text h4 {
+    font-size: 1.8rem;
+  }
+  .way_text p {
+    font-size: 1.3rem;
+  }
+}
+@media all and (max-width: 1015px) {
+  .mob_br {
+    display: block;
+  }
+  .prod_breez {
+    width: 180px;
+    height: 404px;
+  }
+  .prod_breez_tb {
+    width: 158px;
+    height: 357px;
+  }
+  .leaf {
+    width: 360px;
+    height: 268px;
+  }
+  .flower2 {
+    width: 358px;
+    height: 259px;
+  }
+  .fruit {
+    width: 82px;
+    height: 114px;
+  }
+  .hbtn {
+    width: 140px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+  #header h2 {
+    font-size: 4rem;
+  }
+  #header p {
+    font-size: 1.4rem;
+    width: 50%;
+  }
+  .drop_water {
+    left: 55%;
+  }
+  .font_wrap {
+    top: 450px;
+  }
+  .logo {
+    width: 100px;
+    height: 62px;
+  }
+  .top_head {
+    top: 30px;
+  }
+  .sec1 .right_f {
+    width: 80%;
+  }
+  .fotlogo a {
+    width: 100px;
+    height: 62px;
+  }
+  .fnb {
+    top: 50px;
+  }
+  .copy_right {
+    font-size: 1.4rem;
+  }
+  .fnb li a {
+    font-size: 1.2rem;
+  }
+  .fot_sns {
+    display: flex;
+  }
+}
+
+@media all and (max-width: 940px) {
+  #our_Way {
+    min-height: 1800px;
+  }
+  .way_wrap {
+    left: 50%;
+    top: 14%;
+    transform: translateX(-50%);
+    flex-direction: column;
+  }
+  .way {
+    width: 360px;
+    height: 300px;
+    margin-bottom: 200px;
+  }
+  .way_text {
+    width: 100%;
+    transform: translateX(-50%);
+    left: 50%;
+    margin: 15px 0 0;
+  }
+  .line_bg {
+    width: 0.2vw;
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%);
+  }
+  .line_bg {
+    width: 2px;
+  }
+  #layer_w .healt_l {
+    opacity: 0;
+    top: 25%;
+  }
+  #layer_w .healt_l.active {
+    opacity: 1;
+  }
+  #health .hand {
+    width: 320px;
+    height: 446px;
+  }
+  #health .weight {
+    top: 50%;
+    width: 130px;
+  }
+  #health .nutri {
+    width: 160px;
+  }
+  #health .nutri::before {
+	width: 160px;
+  }
+  #health .nutri::after {
+    width: 161px;
+  }
+  #health .weight:after {
+    width: 9px;
+    margin-left: -4.5px;
+  }
+  #health .heart {
+    width: 100px;
+    top: 50%;
+  }
+  @keyframes heart_b {
+    90% {
+      width: 110px;
+    }
+  }
+  .healt_l p {
+    font-size: 1.8rem;
+    bottom: -25px;
+  }
+  .footer_w {
+    max-width: calc(100% - 32px);
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding: 10px 0 0;
+  }
+  .copy_right {
+    font-size: 1.2rem;
+    padding: 10px 0;
+  }
+  .fnb {
+    padding: 10px 0;
+    margin: 0;
+    flex-wrap: wrap;
+    line-height: 2;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .fnb li {
+    margin-left: 0;
+    padding-left: 5px;
+  }
+  .fnb li a {
+    font-size: 1.2rem;
+  }
+  .fot_sns {
+    position: static;
+    right: auto;
+    bottom: auto;
+    max-width: calc(100% - 32px);
+    margin: 0 auto 10px;
+    width: 200px;
+  }
+  .fot_sns li {
+    margin-left: 5px;
+  }
+  #footer .container::after {
+    display: none;
+  }
+  .foot_f {
+    display: block;
+  }
+}
+@media all and (max-width: 765px) {
+  .prod_list {
+    width: 300px;
+    margin: 0 auto;
+  }
+  .dia_svg {
+    width: 75px;
+    height: 41px;
+  }
+  #service {
+    min-height: 806px;
+  }
+}
+@media all and (max-width: 728px) {
+  .mob_only {
+    display: block !important;
+  }
+  #header {
+    min-height: 1200px;
+  }
+  .armond_prod_wrap {
+    top: 56%;
+    right: auto;
+  }
+  .leaf {
+    width: 353px;
+    height: 218px;
+    background-image: url(../img/leaf_alomond2.png);
+    bottom: -65px;
+    top: 7%;
+    z-index: 10;
+    transform: none;
+  }
+  .flower2 {
+    width: 339px;
+    height: 246px;
+    transform: rotate(176deg);
+    top: auto;
+    bottom: 12%;
+  }
+  .prod_breez {
+    width: 206px;
+    height: 465px;
+    transform: rotate(-15deg) translateX(-50%);
+    left: 50%;
+    bottom: auto;
+    top: 28%;
+  }
+  .prod_breez_tb {
+    width: 176px;
+    height: 398px;
+    left: 45%;
+    top: 16%;
+  }
+  #header .container {
+    padding-top: 26px;
+  }
+  .font_wrap {
+    right: 4%;
+    top: 18%;
+    left: auto;
+  }
+  #header h2 {
+    font-size: 3.2rem;
+    font-size: 4.4rem;
+    text-align: right;
+  }
+  #header p {
+    display: none;
+  }
+  .fruit {
+    display: none;
+  }
+  #header .hbtn {
+    display: none;
+    width: 125px;
+    height: 45px;
+    position: absolute;
+    bottom: 25px;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+  }
+  .hbtn {
+    width: 125px;
+    height: 45px;
+  }
+  @keyframes drip {
+    to {
+      top: 80%;
+    }
+  }
+  .drop_water > div {
+    margin: 700px auto 0;
+  }
+  .drop_water {
+    left: -20%;
+    width: 100%;
+    transform: none;
+  }
+  @keyframes ripple {
+    from {
+      opacity: 1;
+    }
+    to {
+      width: 300px;
+      height: 90px;
+      top: -100px;
+      opacity: 0;
+    }
+  }
+  @keyframes ripple_2 {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      width: 200px;
+      height: 60px;
+      border-width: 3px;
+      opacity: 1;
+    }
+  }
+  .drop_water .drop {
+    width: 15px;
+    height: 15px;
+    top: -10%;
+    border-radius: 50%;
+  }
+  .drop_water .drop::before {
+    border-left-width: 7.5px;
+    border-right-width: 7.5px;
+    border-bottom-width: 23px;
+    top: -18px;
+  }
+  .hright_text {
+    width: 95%;
+  }
+  #health {
+    min-height: 828px;
+  }
+  #health .hand {
+    width: 259px;
+    height: 425px;
+  }
+  #health .nutri {
+    width: 138px;
+  }
+  #health .weight {
+    width: 115px;
+  }
+  #health .nutri::before {
+    width: 142px;
+  }
+  #health .nutri::after {
+    width: 137px;
+  }
+  #health .heart {
+    width: 82px;
+    top: 50%;
+  }
+  @keyframes heart_b {
+    90% {
+      width: 100px;
+    }
+  }
+  .healt_l p {
+    font-size: 1.6rem;
+  }
+  .sec1 .right_f {
+    top: 21%;
+  }
+  .sec1 .left_f {
+    width: 450px;
+    height: 300px;
+  }
+  .right_f p {
+    font-size: 1.6rem;
+  }
+  .sec1 .right_f > div {
+    width: 425px;
+    height: 270px;
+  }
+  .left_f p {
+    font-size: 1.6rem;
+    top: -20%;
+  }
+  .sec2 .left_f > div {
+    width: 373px;
+    height: 230px;
+    left: -40%;
+    top: -7%;
+  }
+  .sec2 .left_f {
+    left: -20%;
+  }
+  .sec2 .right_f {
+    width: 450px;
+    height: 300px;
+    top: 16%;
+  }
+  .sec3 .left_f {
+    width: 406px;
+    height: 422px;
+  }
+  .sec3 .right_f > div {
+    top: -52%;
+    width: 129px;
+    height: 170px;
+  }
+  .sec3 .right_f > div:nth-child(2) {
+    width: 144px;
+    height: 207px;
+    right: -3%;
+    top: -37%;
+  }
+  .sec3 .right_f > div:nth-child(3) {
+    width: 164px;
+    height: 165px;
+    top: -18%;
+  }
+  .sec3 .left_f {
+    width: 406px;
+    height: 422px;
+  }
+  .sec3 .right_f p {
+    top: 7%;
+  }
+}
+@media all and (max-width: 578px) {
+  .prod_list {
+    width: 100%;
+  }
+  .footer_w {
+    max-width: calc(100% - 10px);
+  }
+}
+@media all and (max-width: 570px) {
+  .leaf {
+    width: 312px;
+    height: 193px;
+  }
+  .hright_text h3 {
+    font-size: 3.4rem;
+  }
+  .hright_text p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+  .hright_text::before {
+    width: 120px;
+    height: 107px;
+  }
+  .hright_text::after {
+    width: 116px;
+    height: 96px;
+  }
+  .hright_text {
+    width: 100%;
+  }
+  .pack {
+    width: 536px;
+    height: 222px;
+  }
+  #our_Way {
+    min-height: 1550px;
+  }
+  .way {
+    width: 282px;
+    height: 235px;
+    margin-bottom: 200px;
+  }
+  .tit_cont {
+    font-size: 3.3rem;
+  }
+  #health .heart {
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #health .weight {
+    width: 105px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #health .hand {
+    width: 295px;
+    height: 489px;
+  }
+  #legacy {
+    min-height: 2800px;
+  }
+  .sec1 .left_f {
+    width: 350px;
+    height: 250px;
+  }
+  .right_f {
+    width: 100%;
+  }
+  .sec1 .right_f {
+    top: 22%;
+  }
+  .sec1 .right_f > div {
+    top: 59%;
+    width: 359px;
+    height: 220px;
+  }
+  .right_f p {
+    top: 51%;
+    width: 100%;
+    font-size: 1.4rem;
+  }
+  .sec2 .left_f > div {
+    width: 349px;
+    height: 215px;
+    top: -8%;
+  }
+  .sec2 .left_f {
+    top: 60%;
+  }
+  .left_f p {
+    width: 100%;
+    font-size: 1.4rem;
+    top: -20%;
+  }
+  .sec2 .right_f {
+    width: 350px;
+    height: 250px;
+    top: 12%;
+  }
+  .lagacy_sec {
+    height: 40%;
+  }
+  .sec3 .left_f {
+    width: 315px;
+    height: 325px;
+    top: -10%;
+  }
+  .sec3 .right_f {
+    top: 29%;
+  }
+  .sec3 .right_f p {
+    top: -4%;
+  }
+  .dia_svg {
+    width: 60px;
+    height: 33px;
+  }
+  #layer_w .healt_l {
+	top: 35%;
+  }
+}
+@media all and (max-width: 400px) {
+  #header {
+    min-height: 1000px;
+  }
+  .logo {
+    width: 80px;
+    height: 50px;
+  }
+  #header h2 {
+    font-size: 3.2rem;
+  }
+  .font_wrap {
+    right: 4%;
+    top: 22%;
+    left: auto;
+  }
+  .prod_breez {
+    width: 173px;
+    height: 390px;
+  }
+  .prod_breez_tb {
+    width: 133px;
+    height: 278px;
+  }
+  .flower2 {
+    width: 264px;
+    height: 192px;
+  }
+  .leaf {
+    width: 285px;
+    height: 176px;
+  }
+  .ham {
+    width: 25px;
+  }
+  .drop_water {
+    top: 300px;
+  }
+  .drop_water > div {
+    margin: 550px auto 0;
+  }
+  .pack {
+    width: 120vw;
+    height: 53vw;
+  }
+  .hleft {
+    width: 180px;
+    top: 44%;
+    height: 284px;
+  }
+  .container {
+    width: calc(100% - 32px);
+  }
+  .hright_text h3 {
+    font-size: 8.6vw;
+  }
+  .tit_cont {
+    font-size: 3rem;
+  }
+}
+@media all and (max-width: 399px) {
+  #legacy {
+    min-height: 2400px;
+  }
+  .sec1 .left_f {
+    width: 284px;
+    height: 162px;
+  }
+  .sec1 .right_f > div {
+    width: 300px;
+    height: 170px;
+    top: 58%;
+  }
+  .right_f p {
+    font-size: 1.2rem;
+    top: 45%;
+  }
+  .left_f p {
+    top: -26%;
+    font-size: 1.2rem;
+  }
+  .sec2 .right_f {
+    width: 284px;
+    height: 162px;
+  }
+  .sec2 .left_f {
+    top: 60%;
+  }
+  .sec2 .left_f > div {
+    width: 265px;
+    height: 164px;
+    top: -12%;
+  }
+  .sec3 .left_f {
+    height: 271px;
+    width: 265px;
+    top: -18%;
+  }
+  .sec3 .right_f {
+    top: 27%;
+  }
+  .sec3 .right_f > div {
+    width: 83px;
+    height: 113px;
+  }
+  .sec3 .right_f > div:nth-child(2) {
+    display: none;
+  }
+  .sec3 .right_f > div:nth-child(3) {
+    width: 103px;
+    height: 105px;
+    top: -21%;
+    transform: rotate3d(0, 0, 1, -88deg);
+    left: -20%;
+  }
+  .sec3 .right_f p {
+    top: -11%;
+    font-size: 1.2rem;
+  }
+  .dia_svg {
+    width: 49px;
+    height: 27px;
+  }
+}
+@media all and (max-width: 320px) {
+  #header h2 {
+    font-size: 2.9rem;
+  }
+  .leaf {
+    width: 274px;
+    height: 169px;
+    top: 8%;
+  }
+  #health .hand {
+    width: 262px;
+    height: 432px;
+  }
 }

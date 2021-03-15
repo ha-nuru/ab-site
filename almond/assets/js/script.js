@@ -1,43 +1,46 @@
 $(function () {
+  var my_win = $(window).width();
   // mousewheel event
-  var elm = ".box";
-  $(elm).each(function (index) {
-    $(this).on("mousewheel DOMMouseScroll", function (e) {
-      e.preventDefault();
-      var delta = 0;
-      if (!event) event = window.event;
-      if (event.wheelDelta) {
-        delta = event.wheelDelta / 120;
-        if (window.opera) delta = -delta;
-      } else if (event.detail) delta = -event.detail / 3;
-      var moveTop = $(window).scrollTop();
-      var elmSelecter = $(elm).eq(index);
-      if (delta < 0) {
-        if ($(elmSelecter).next() != undefined) {
-          try {
-            moveTop = $(elmSelecter).next().offset().top;
-          } catch (e) {}
-        }
-      } else {
-        if ($(elmSelecter).prev() != undefined) {
-          try {
-            moveTop = $(elmSelecter).prev().offset().top;
-          } catch (e) {}
-        }
-      }
-      $("html,body")
-        .stop()
-        .animate(
-          {
-            scrollTop: moveTop + "px",
-          },
-          {
-            duration: 100,
-            complete: function () {},
+  if (my_win > 1180) {
+    var elm = ".box";
+    $(elm).each(function (index) {
+      $(this).on("mousewheel DOMMouseScroll", function (e) {
+        e.preventDefault();
+        var delta = 0;
+        if (!event) event = window.event;
+        if (event.wheelDelta) {
+          delta = event.wheelDelta / 120;
+          if (window.opera) delta = -delta;
+        } else if (event.detail) delta = -event.detail / 3;
+        var moveTop = $(window).scrollTop();
+        var elmSelecter = $(elm).eq(index);
+        if (delta < 0) {
+          if ($(elmSelecter).next() != undefined) {
+            try {
+              moveTop = $(elmSelecter).next().offset().top;
+            } catch (e) {}
           }
-        );
+        } else {
+          if ($(elmSelecter).prev() != undefined) {
+            try {
+              moveTop = $(elmSelecter).prev().offset().top;
+            } catch (e) {}
+          }
+        }
+        $("html,body")
+          .stop()
+          .animate(
+            {
+              scrollTop: moveTop + "px",
+            },
+            {
+              duration: 100,
+              complete: function () {},
+            }
+          );
+      });
     });
-  });
+  }
   // main visual ani
   var tl = new TimelineLite();
   tl.to($(".leaf"), 0.8, {
@@ -49,6 +52,10 @@ $(function () {
     ease: Linear.ease,
     opacity: 1,
   });
+  tl.to($(".prod_breez_tb "), 0.3, {
+    ease: Linear.ease,
+    opacity: 0.5,
+  });
   tl.to($(".drop_water"), 0.3, {
     opacity: 1,
   });
@@ -58,10 +65,14 @@ $(function () {
 
   var e0 = document.getElementsByClassName("flower1");
   var e1 = document.getElementsByClassName("flower2");
-
   var t2 = new TimelineLite();
-  t2.staggerTo([e0, e1], 0.6, { ease: Linear.ease, right: -2 + "%" });
+  if (my_win > 729) {
+    t2.staggerTo([e0, e1], 0.6, { ease: Linear.ease, right: -2 + "%" });
+  } else {
+    t2.staggerTo([e0, e1], 0.6, { ease: Linear.ease, right: -6 + "%" });
+  }
 
+  // sub visual ani
   var e0 = document.getElementsByClassName("p_al1");
   var e1 = document.getElementsByClassName("p_al2");
   var e2 = document.getElementsByClassName("p_al3");
@@ -71,7 +82,7 @@ $(function () {
   t4.staggerTo(
     [e0, e1, e2, e3],
     3,
-    { top: 55 + "vw", repeat: -1, ease: Bounce.easeOut },
+    { top: 1056 + "px", repeat: -1, ease: Bounce.easeOut },
     0.5
   );
   // scroll ani (history, health, ourway, legacy)
@@ -79,35 +90,62 @@ $(function () {
     let scroll_h = $(window).scrollTop();
     if (scroll_h + 300 >= $("#history").offset().top) {
       var t3 = new TimelineLite();
-      t3.to($(".hleft"), 0.4, {
-        ease: Linear.power2,
-        left: 3 + "%",
-        opacity: 1,
-      });
-      t3.to($(".hright_text"), 0.5, {
-        ease: Linear.ease,
-        opacity: 1,
-        right: 0 + "%",
-      });
+      if (my_win > 1028) {
+        t3.to($(".hleft"), 0.4, {
+          ease: Linear.power2,
+          left: 3 + "%",
+          opacity: 1,
+        });
+        t3.to($(".hright_text"), 0.5, {
+          ease: Linear.ease,
+          opacity: 1,
+          right: 3 + "%",
+        });
+      } else if (my_win >= 400) {
+        t3.to($(".hleft"), 0.4, {
+          ease: Linear.power2,
+          opacity: 1,
+        });
+        t3.to($(".hright_text"), 0.5, {
+          ease: Linear.ease,
+          opacity: 1,
+          bottom: 5 + "%",
+        });
+      } else {
+        t3.to($(".hleft"), 0.4, {
+          ease: Linear.power2,
+          opacity: 1,
+        });
+        t3.to($(".hright_text"), 0.5, {
+          ease: Linear.ease,
+          opacity: 1,
+          bottom: 8 + "%",
+        });
+      }
       t3.to($(".pack"), 0.5, {
         ease: Linear.ease,
         opacity: 1,
-        top: 0 + "%",
+        top: -6 + "%",
       });
     }
     if (scroll_h + 500 >= $("#our_Way").offset().top) {
       var t4 = new TimelineLite();
       t4.to($("#our_Way h3"), 0.3, {
         ease: Linear.ease,
-        top: 13 + "vh",
+        top: 122 + "px",
         opacity: 1,
       });
       t4.to($(".op_svg"), 0.2, {
         ease: Linear.ease,
         opacity: 1,
       });
+
       var line_bg = document.getElementsByClassName("line_bg");
-      TweenLite.to(line_bg, 2, { width: 100 + "%" });
+      if (my_win > 940) {
+        TweenLite.to(line_bg, 2, { width: 100 + "%" });
+      } else {
+        TweenLite.to(line_bg, 3, { height: 100 + "%" });
+      }
       var w0 = document.getElementsByClassName("way_text1");
       var w1 = document.getElementsByClassName("way_text2");
       var w2 = document.getElementsByClassName("way_text3");
@@ -117,97 +155,160 @@ $(function () {
       var t4 = new TimelineLite();
       t4.to($("#health h3"), 0.3, {
         ease: Linear.ease,
-        top: 13 + "vh",
+        top: 122 + "px",
         opacity: 1,
       });
-      t4.to($("#health h3"), 0.3, {
-        ease: Linear.ease,
-        top: 13 + "vh",
-        opacity: 1,
-      });
-      t4.to($("#health h3"), 0.3, {
-        ease: Linear.ease,
-        top: 13 + "vh",
-        opacity: 1,
-      });
+      if (570 < my_win && my_win <= 940) {
+        t4.to($(".nutri"), 0.5, {
+          ease: Linear.ease,
+          opacity: 1,
+        });
+        t4.to($(".weight"), 0.5, {
+          ease: Linear.ease,
+          opacity: 1,
+        });
+        t4.to($(".heart"), 0.5, {
+          ease: Linear.ease,
+          opacity: 1,
+        });
+      }
     }
     if (scroll_h + 500 >= $("#legacy").offset().top) {
       var t5 = new TimelineLite();
       t5.to($("#legacy h3"), 0.5, {
         ease: Linear.ease,
-        top: 18 + "vh",
+        top: 169 + "px",
         opacity: 1,
       });
     }
     if (scroll_h >= $(".sec1").offset().top) {
       var t5 = new TimelineLite();
-      t5.to($(".sec1 .left_f"), 0.2, {
-        ease: Linear.ease,
-        left: 0,
-        opacity: 1,
-      });
-      t5.to($(".sec1 .right_f"), 0.3, {
-        ease: Linear.ease,
-        right: 0,
-        opacity: 1,
-      });
-      t5.to($(".sec1 .right_f >div:nth-child(2)"), 0.2, {
-        ease: Linear.ease,
-        right: -24 + "%",
-        opacity: 1,
-      });
-      t5.to($(".sec1 .right_f>div:nth-child(1)"), 0.3, {
-        ease: Linear.ease,
-        right: -25 + "%",
-        opacity: 1,
-      });
+      if (my_win > 1400) {
+        t5.to($(".sec1 .left_f"), 0.2, {
+          ease: Linear.ease,
+          left: 0,
+          opacity: 1,
+        });
+        t5.to($(".sec1 .right_f"), 0.3, {
+          ease: Linear.ease,
+          right: 0,
+          opacity: 1,
+        });
+        t5.to($(".sec1 .right_f >div:nth-child(2)"), 0.2, {
+          ease: Linear.ease,
+          right: -24 + "%",
+          opacity: 1,
+        });
+        t5.to($(".sec1 .right_f>div:nth-child(1)"), 0.3, {
+          ease: Linear.ease,
+          right: -25 + "%",
+          opacity: 1,
+        });
+      } else {
+        t5.to($(".sec1 .left_f"), 0.2, {
+          ease: Linear.ease,
+          left: 50 + "%",
+          opacity: 1,
+        });
+        t5.to($(".sec1 .right_f"), 0.3, {
+          ease: Linear.ease,
+          right: 0,
+          opacity: 1,
+        });
+        t5.to($(".sec1 .right_f>div:nth-child(1)"), 0.4, {
+          ease: Linear.ease,
+          right: -70 + "px",
+          opacity: 1,
+        });
+      }
     }
     if (scroll_h >= $(".sec2").offset().top) {
       var t5 = new TimelineLite();
-      t5.to($(".sec2 .left_f"), 0.3, {
-        ease: Linear.ease,
-        left: 0,
-        opacity: 1,
-      });
-      t5.to($(".sec2 .right_f"), 0.3, {
-        ease: Linear.ease,
-        right: 0,
-        opacity: 1,
-      });
+      if (my_win > 1400) {
+        t5.to($(".sec2 .right_f"), 0.3, {
+          ease: Linear.ease,
+          right: 0,
+          opacity: 1,
+        });
+        t5.to($(".sec2 .left_f"), 0.3, {
+          ease: Linear.ease,
+          left: 0,
+          opacity: 1,
+        });
+      } else {
+        t5.to($(".sec2 .right_f"), 0.2, {
+          ease: Linear.ease,
+          right: 50 + "%",
+          opacity: 1,
+        });
+        t5.to($(".sec2 .left_f"), 0.2, {
+          ease: Linear.ease,
+          left: 0,
+          opacity: 1,
+        });
+        t5.to($(".sec2 .left_f > div"), 0.4, {
+          ease: Linear.ease,
+          left: -70 + "px",
+          opacity: 1,
+        });
+      }
     }
+
     if (scroll_h + 500 >= $(".sec3").offset().top) {
       var t5 = new TimelineLite();
-      t5.to($(".sec3 .right_f>div:nth-child(1)"), 0.5, {
-        ease: Linear.ease,
-        opacity: 1,
-      });
-      t5.to($(".sec3 .right_f>div:nth-child(2)"), 0.5, {
-        ease: Linear.ease,
-        opacity: 1,
-      });
-      t5.to($(".sec3 .right_f>div:nth-child(3)"), 0.5, {
-        ease: Linear.ease,
-        opacity: 1,
-      });
-    }
-    if (scroll_h >= $(".sec3").offset().top) {
-      var t5 = new TimelineLite();
-      t5.to($(".sec3 .right_f p"), 0.3, {
-        ease: Linear.ease,
-        right: 0,
-        opacity: 1,
-      });
-      t5.to($(".sec3 .left_f"), 0.3, {
-        ease: Linear.ease,
-        left: 0,
-        opacity: 1,
-      });
+      if (my_win > 1400) {
+        t5.to($(".sec3 .right_f>div:nth-child(1)"), 0.1, {
+          ease: Linear.ease,
+          opacity: 1,
+        });
+        t5.to($(".sec3 .right_f>div:nth-child(2)"), 0.2, {
+          ease: Linear.ease,
+          opacity: 1,
+        });
+        t5.to($(".sec3 .right_f>div:nth-child(3)"), 0.3, {
+          ease: Linear.ease,
+          opacity: 1,
+        });
+        t5.to($(".sec3 .left_f"), 0.2, {
+          ease: Linear.ease,
+          left: 0,
+          opacity: 1,
+        });
+        t5.to($(".sec3 .right_f p"), 0.3, {
+          ease: Linear.ease,
+          right: 0,
+          opacity: 1,
+        });
+      } else {
+        t5.to($(".sec3 .right_f>div:nth-child(1)"), 0.2, {
+          ease: Linear.ease,
+          opacity: 1,
+        });
+        t5.to($(".sec3 .left_f"), 0.2, {
+          ease: Linear.ease,
+          left: 50 + "%",
+          opacity: 1,
+        });
+        t5.to($(".sec3 .right_f>div:nth-child(2)"), 0.3, {
+          ease: Linear.ease,
+          opacity: 1,
+        });
+        t5.to($(".sec3 .right_f>div:nth-child(3)"), 0.4, {
+          ease: Linear.ease,
+          opacity: 1,
+        });
+        t5.to($(".sec3 .right_f p"), 0.3, {
+          ease: Linear.ease,
+          right: 0,
+          opacity: 1,
+        });
+      }
     }
     if (scroll_h + 200 >= $("#service").offset().top) {
       var t6 = new TimelineLite();
       t6.to($("#service .tit_cont"), 0.6, {
         ease: Linear.ease,
-        top: 15 + "vh",
+        top: 150 + "px",
         opacity: 1,
       });
       t6.to($(".prod_list"), 0.6, {
@@ -225,6 +326,10 @@ $(function () {
     } else {
       $(".prod_list").removeClass("pro_ani");
     }
+    if (scroll_h >= $(".trigger_D").offset().top) {
+      var line_bg = document.getElementsByClassName("dia_line1");
+      TweenLite.to(line_bg, 1, { height: 100 + "%" });
+    }
   });
 
   // mousemove event
@@ -234,53 +339,41 @@ $(function () {
   var object4 = $(".hand");
 
   var layer = $("#layer_w");
-  layer.mousemove(function (e) {
-    var valueX = (e.pageX * -1) / 12;
-    var valueY = (e.pageY * -1) / 12;
-    object1.css({
-      transform: "translate3d(" + valueX + "px," + valueY + "px,0)",
-    });
+  if (my_win >= 1200) {
     layer.mousemove(function (e) {
-      var valueX = (e.pageX * -1) / 15;
-      var valueY = (e.pageY * -1) / 25;
-
-      object2.css({
+      var valueX = (e.pageX * -1) / 12;
+      var valueY = (e.pageY * -1) / 12;
+      object1.css({
         transform: "translate3d(" + valueX + "px," + valueY + "px,0)",
       });
-    });
+      layer.mousemove(function (e) {
+        var valueX = (e.pageX * -1) / 15;
+        var valueY = (e.pageY * -1) / 25;
 
-    layer.mousemove(function (e) {
-      var valueX = (e.pageX * -1) / 15;
-      var valueY = (e.pageY * -1) / 15;
+        object2.css({
+          transform: "translate3d(" + valueX + "px," + valueY + "px,0)",
+        });
+      });
+      layer.mousemove(function (e) {
+        var valueX = (e.pageX * -1) / 15;
+        var valueY = (e.pageY * -1) / 15;
 
-      object3.css({
-        transform: "translate3d(" + valueX + "px," + valueY + "px,0)",
+        object3.css({
+          transform: "translate3d(" + valueX + "px," + valueY + "px,0)",
+        });
+      });
+      layer.mousemove(function (e) {
+        var valueX = (e.pageX * -1) / 15;
+        var valueY = (e.pageY * 1) / 18;
+
+        object4.css({
+          transform: "translate3d(" + valueX + "px," + valueY + "px,0)",
+        });
       });
     });
-    layer.mousemove(function (e) {
-      var valueX = (e.pageX * -1) / 15;
-      var valueY = (e.pageY * 1) / 18;
-
-      object4.css({
-        transform: "translate3d(" + valueX + "px," + valueY + "px,0)",
-      });
-    });
-  });
-
+  }
   // legacy_sticky dialine
   var controller = new ScrollMagic.Controller();
-
-  var tween1 = TweenMax.to(".dia_line1", 0.4, {
-    height: "100+%",
-    ease: Linear.ease,
-  });
-  var scene1 = new ScrollMagic.Scene({
-    triggerElement: "#trigger1",
-    duration: 2000,
-  })
-    .setTween(tween1)
-    .addTo(controller);
-
   var tweend = TweenMax.to(".dia_svg", 0.5, {
     scale: 2,
     opacity: 1,
@@ -288,7 +381,7 @@ $(function () {
   });
   var scene4 = new ScrollMagic.Scene({
     triggerElement: ".trigger_D",
-    duration: "2700",
+    duration: $(".legac_line").height() + 50,
     offset: 300,
   })
     .setTween(tweend)
