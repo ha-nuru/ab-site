@@ -953,13 +953,13 @@ p {
   top: -169px;
 }
 .product_wrap {
-  position: relative;
-  top: 250px;
+  height: 100%;
 }
 .product_wrap a {
-  width: 400px;
-  height: auto;
-  display: block;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .product_wrap a p.ser_text {
   color: #545454;
@@ -970,7 +970,7 @@ p {
   opacity: 0;
 }
 .product_cont {
-  align-items: flex-end;
+  align-items: center;
 }
 .prod_list {
   width: 100%;
@@ -1019,13 +1019,11 @@ p {
   width: 100%;
   height: 307px;
   background-image: url(../img/prod3.png);
-  background-size: auto;
 }
 .product_wrap .prod_list4 {
   width: 100%;
   height: 308px;
   background-image: url(../img/prod4.png);
-  background-size: auto;
 }
 #service .hbtn {
   position: absolute;
@@ -1153,10 +1151,6 @@ p {
 }
 
 @media all and (max-width: 1400px) {
-  .swiper-container {
-    width: 100%;
-    height: auto;
-  }
   .swiper-slide {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1383,9 +1377,9 @@ p {
   }
 }
 @media all and (max-width: 1200px) {
-	#health .healt_l{
-		opacity: 0;
-	}
+  #health .healt_l {
+    opacity: 0;
+  }
   #health .nutri {
     width: 163px;
     top: 30%;
@@ -1458,12 +1452,86 @@ p {
     left: 50%;
     top: 50%;
   }
+  .prod_list {
+    background-size: auto 100%;
+  }
+  .product_wrap .prod_list1 {
+    height: 240px;
+  }
+  .product_wrap .prod_list2 {
+    height: 150px;
+  }
+  .product_wrap .prod_list3 {
+    height: 220px;
+  }
+  .product_wrap .prod_list4 {
+    height: 190px;
+  }
+  .product_wrap a p.ser_text {
+    margin-top: 20px;
+    font-size: 2rem;
+  }
 }
 @media all and (max-width: 1180px) {
   .ham {
-    display: inline-block;
-    width: 30px;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    display: block;
+    position: relative;
+    z-index: 100;
+    background: #2980b9;
+    border: 4px solid #fff;
+    box-sizing: content-box;
+    border-radius: 50%;
+    text-indent: 100%;
+    color: transparent;
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .ham_open {
+    top: 50%;
+    margin-top: -1px;
+    left: 50%;
+    margin-left: -12px;
+  }
+  .ham_open,
+  .ham_open::after,
+  .ham_open::before {
     position: absolute;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 4px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .ham_open::after,
+  .ham_open::before,
+  .ham_close::after,
+  .ham_close::before {
+    content: "";
+    left: 0;
+  }
+  .ham_open::after {
+    bottom: 6px;
+  }
+  .ham_open::before {
+    top: 6px;
+  }
+  .ham_close {
+    background: transparent;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .ham_close::before {
+    -webkit-transform: translateY(-6px) rotate(45deg);
+    transform: translateY(-6px) rotate(45deg);
+  }
+  .ham_close::after {
+    -webkit-transform: translateY(6px) rotate(-45deg);
+    transform: translateY(6px) rotate(-45deg);
   }
   .gnb {
     display: none;
@@ -1474,7 +1542,6 @@ p {
     align-items: center;
     width: 100%;
     position: relative;
-    top: 20px;
   }
   .logo {
     width: 130px;
@@ -1543,6 +1610,9 @@ p {
   }
 }
 @media all and (max-width: 1015px) {
+  #header .container {
+    padding-top: 30px;
+  }
   .mob_br {
     display: block;
   }
@@ -1587,9 +1657,6 @@ p {
   .logo {
     width: 100px;
     height: 62px;
-  }
-  .top_head {
-    top: 30px;
   }
   .sec1 .right_f {
     width: 80%;
@@ -1736,9 +1803,10 @@ p {
     white-space: nowrap;
     width: 100%;
     text-align: center;
-    color: #ccc;
+    color: #504c4c;
     opacity: 0;
     font-weight: bold;
+    transition: opacity 1s linear;
   }
 }
 @media all and (max-width: 765px) {
@@ -1751,7 +1819,7 @@ p {
     height: 41px;
   }
   #service {
-    min-height: 806px;
+    min-height: 650px;
   }
 }
 @media all and (max-width: 728px) {
@@ -1972,6 +2040,10 @@ p {
   .sec3 .right_f p {
     top: 7%;
   }
+  .ham {
+    width: 30px;
+    height: 30px;
+  }
 }
 @media all and (max-width: 578px) {
   .prod_list {
@@ -2025,7 +2097,7 @@ p {
     transform: translateX(-50%);
   }
   #health .weight {
-    width: 105px;
+    width: 125px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -2128,9 +2200,6 @@ p {
     width: 285px;
     height: 176px;
   }
-  .ham {
-    width: 25px;
-  }
   .drop_water {
     top: 300px;
   }
@@ -2154,6 +2223,17 @@ p {
   }
   .tit_cont {
     font-size: 3rem;
+  }
+  .ham_open,
+  .ham_open::after,
+  .ham_open::before {
+    width: 20px;
+  }
+  .ham_open {
+    margin-left: -10px;
+  }
+  .ham{
+	  border-width: 3px;
   }
 }
 @media all and (max-width: 399px) {

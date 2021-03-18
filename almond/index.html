@@ -16,19 +16,23 @@
           <div class="top_head">
             <a href="#a" class="ir_pm logo">logo</a>
             <a href="#" class="ham">
-              <img src="./assets/img/ham.png" alt="햄버거 메뉴" />
+              <span class="ham_open"></span>
             </a>
           </div>
-          <nav class="gnb">
+          <nav class="gnb ham_menu">
             <ul>
-              <div>
-                <li><a href="">company</a></li>
-                <li><a href="">product</a></li>
-              </div>
-              <div>
-                <li><a href="">information</a></li>
-                <li><a href="">receipe</a></li>
-              </div>
+              <li>
+                <ul>
+                  <li><a href="">company</a></li>
+                  <li><a href="">product</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="">information</a></li>
+                  <li><a href="">receipe</a></li>
+                </ul>
+              </li>
             </ul>
           </nav>
           <div class="leaf">
@@ -514,13 +518,18 @@
           var targ_img = $(".healt_l");
           $(".blue_btn").click(function (e) {
             e.preventDefault();
-						$('.not_btn_t').hide();
+            $(".not_btn_t").hide();
             $(this).parent().siblings(".healt_l").addClass("active");
             targ_img.hide();
             var targ_idx = $(this).index();
             targ_img.eq(targ_idx).show();
           });
         }
+
+        // ham button
+        $(".ham").click(function () {
+          $(this).find(".ham_open").toggleClass("ham_close");
+        });
       });
     </script>
   </body>

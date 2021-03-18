@@ -107,7 +107,12 @@ $(function () {
   $(window).scroll(function () {
     let scroll_h = $(window).scrollTop();
     if (scroll_h + 300 >= $("#history").offset().top) {
-      var t3 = new TimelineLite();
+		var t3 = new TimelineLite();
+		t3.to($(".pack"), 0.5, {
+			ease: Linear.ease,
+			opacity: 1,
+			top: -6 + "%",
+		  });
       if (my_win > 1028) {
         t3.to($(".hleft"), 0.4, {
           ease: Linear.power2,
@@ -140,11 +145,7 @@ $(function () {
           bottom: 8 + "%",
         });
       }
-      t3.to($(".pack"), 0.5, {
-        ease: Linear.ease,
-        opacity: 1,
-        top: -6 + "%",
-      });
+    
     }
     if (scroll_h + 500 >= $("#our_Way").offset().top) {
       var t4 = new TimelineLite();
