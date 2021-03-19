@@ -54,20 +54,15 @@ p {
   padding-top: 50px;
 }
 .gnb {
-  float: right;
-  width: 50%;
-}
-.gnb {
   width: 100%;
 }
 .gnb > ul {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  padding-top: 48px;
-}
-.gnb > ul {
   justify-content: space-evenly;
+  padding-top: 48px;
+  align-items: center;
+  height: 100%;
 }
 .gnb > ul li {
   display: inline-block;
@@ -95,7 +90,7 @@ p {
   background: url(../img/logo.png) no-repeat;
   background-size: 100%;
   position: absolute;
-  z-index: 10;
+  z-index: 100;
   left: 247px;
 }
 .logo {
@@ -956,6 +951,7 @@ p {
   height: 100%;
 }
 .product_wrap a {
+  width: calc(100% / 4);
   height: 50%;
   display: flex;
   flex-direction: column;
@@ -1176,6 +1172,7 @@ p {
     right: 20%;
     bottom: auto;
     top: 50%;
+    z-index: 10;
   }
   .prod_breez_tb {
     width: 178px;
@@ -1187,13 +1184,12 @@ p {
     position: absolute;
     right: 12%;
     top: 15%;
-    z-index: -1;
+    z-index: 1;
   }
   .armond_prod_wrap {
     position: relative;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
     width: 100%;
     height: 80%;
   }
@@ -1473,22 +1469,29 @@ p {
   }
 }
 @media all and (max-width: 1180px) {
+  .modal {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(84, 84, 84, 0.5);
+    z-index: 50;
+  }
+  .modal.on {
+    display: block;
+  }
   .ham {
     width: 40px;
     height: 40px;
     padding: 6px;
     display: block;
     position: relative;
-    z-index: 100;
+    right: -30px;
     background: #2980b9;
     border: 4px solid #fff;
     box-sizing: content-box;
     border-radius: 50%;
-    text-indent: 100%;
-    color: transparent;
-    white-space: nowrap;
-    cursor: pointer;
-    overflow: hidden;
+    z-index: 100;
   }
   .ham_open {
     top: 50%;
@@ -1534,14 +1537,41 @@ p {
     transform: translateY(6px) rotate(-45deg);
   }
   .gnb {
-    display: none;
+    position: absolute;
+    height: 100%;
+    margin: auto;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    overflow: hidden;
+    z-index: 10;
+  }
+  .gnb > ul {
+    padding-top: 0;
+    -webkit-transform: translateX(110%);
+    transform: translateX(110%);
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+	border-radius: 30px;
+  }
+  .gnb.on > ul {
+    background-color: #3896d3;
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+	border-radius: 30px;
+  }
+  .gnb ul li a {
+    padding: 16px 10px;
+    font-size: 1.5rem;
   }
   .top_head {
+    position: relative;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    width: 100%;
-    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    z-index: 100;
   }
   .logo {
     width: 130px;
@@ -1810,10 +1840,10 @@ p {
   }
 }
 @media all and (max-width: 765px) {
-  .prod_list {
+  /* .prod_list {
     width: 300px;
     margin: 0 auto;
-  }
+  } */
   .dia_svg {
     width: 75px;
     height: 41px;
@@ -2232,8 +2262,8 @@ p {
   .ham_open {
     margin-left: -10px;
   }
-  .ham{
-	  border-width: 3px;
+  .ham {
+    border-width: 3px;
   }
 }
 @media all and (max-width: 399px) {

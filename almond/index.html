@@ -12,29 +12,30 @@
   <body>
     <div id="wrap">
       <header id="header" class="box">
+        <div class="modal"></div>
         <div class="container">
           <div class="top_head">
             <a href="#a" class="ir_pm logo">logo</a>
             <a href="#" class="ham">
               <span class="ham_open"></span>
             </a>
+            <nav class="gnb ham_menu">
+              <ul>
+                <li>
+                  <ul>
+                    <li><a href="">company</a></li>
+                    <li><a href="">product</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="">information</a></li>
+                    <li><a href="">receipe</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
           </div>
-          <nav class="gnb ham_menu">
-            <ul>
-              <li>
-                <ul>
-                  <li><a href="">company</a></li>
-                  <li><a href="">product</a></li>
-                </ul>
-              </li>
-              <li>
-                <ul>
-                  <li><a href="">information</a></li>
-                  <li><a href="">receipe</a></li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
           <div class="leaf">
             <div class="fruit_st ir_pm">아몬드 열매</div>
             <div class="fruit ir_pm">움직이는 열매</div>
@@ -489,25 +490,25 @@
             breakpoints: {
               578: {
                 spaceBetween: 15,
-                centeredSlides: true,
+                // centeredSlides: true,
                 slidesPerView: "1",
                 loop: true,
               },
               765: {
                 spaceBetween: 10,
-                centeredSlides: true,
-                slidesPerView: "auto",
+                // centeredSlides: true,
+                slidesPerView: "2",
                 loop: true,
               },
               900: {
                 spaceBetween: 20,
-                centeredSlides: true,
+                // centeredSlides: true,
                 slidesPerView: "2",
                 loop: true,
               },
               1400: {
                 spaceBetween: 20,
-                centeredSlides: true,
+                // centeredSlides: true,
                 slidesPerView: "3",
                 loop: true,
               },
@@ -526,9 +527,11 @@
           });
         }
 
-        // ham button
+        // mob gnb
         $(".ham").click(function () {
           $(this).find(".ham_open").toggleClass("ham_close");
+          $(".modal").toggleClass("on");
+          $(".gnb").toggleClass("on");
         });
       });
     </script>
