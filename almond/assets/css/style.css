@@ -1475,7 +1475,7 @@ p {
 @media all and (max-width: 1180px) {
   .modal {
     display: none;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     background-color: rgba(84, 84, 84, 0.5);
@@ -1587,10 +1587,10 @@ p {
   .font_wrap {
     left: 9%;
   }
-  .gnb{
-	  width: 100%;
+  .gnb {
+    width: 100%;
   }
- }
+}
 @media all and (max-width: 1027px) {
   .hleft {
     transform: translate(-50%, -50%);
@@ -1845,6 +1845,12 @@ p {
     font-weight: bold;
     transition: opacity 1s linear;
   }
+  .gnb ul > li {
+    padding-left: 20px;
+  }
+  .gnb ul li a {
+    font-size: 1.2rem;
+  }
 }
 @media all and (max-width: 765px) {
   .dia_svg {
@@ -1854,11 +1860,57 @@ p {
   #service {
     min-height: 650px;
   }
-  .gnb ul > li {
-    padding-left: 20px;
+  .top_head {
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    top: 0;
   }
+  .ham {
+    right: auto;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .gnb {
+    left: auto;
+    bottom: auto;
+    width: 50%;
+    position: absolute;
+    right: -100%;
+    transition: right 0.5s linear;
+    background-color: #3896d3;
+  }
+  .gnb > ul {
+    position: absolute;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: initial;
+    top: 80px;
+  }
+  .gnb.on {
+    display: block;
+    right: 0;
+    transition: right 0.5s linear;
+  }
+  .logo {
+    top: 20px;
+  }
+  .gnb ul > li {
+    width: 100%;
+    padding-left: 0;
+  }
+  .gnb ul > li:hover {
+    background-color: #447799;
+  }
+  .gnb ul > li:hover a{
+	color: #fff;
+  } 
   .gnb ul li a {
-    font-size: 1.2rem;
+    padding: 30px;
   }
 }
 @media all and (max-width: 728px) {
